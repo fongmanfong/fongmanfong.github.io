@@ -5,22 +5,36 @@
 %}{% assign showHeader = true %}{% endif %}
 
 {% if showHeader == true %}
-    <header class="header-home {% if site.animation %}animated{% endif %}">
-        {% if site.about %}
-            <a class="link" href="{{ site.url }}/about">
-                <img class="selfie" alt="{{ site.name }}" src="{% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}" />
-            </a>
-        {% else %}
-            <span class="link">
-                <img class="selfie" alt="{{ site.name }}" src="{% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}" />
-            </span>
-        {% endif %}
+    {% if page.title == "Blog" %}
+        <header class="header-home {% if site.animation %}animated{% endif %}">
+            <h1 class="title">The <s>Feyn</s>Fongman Technique</h1>
+            <h2 class="description">Dumbing things down one thing at a time</h2>
+        </header>
 
-        <h1 class="title">{{ site.name }}</h1>
-        <h2 class="description">{{ site.bio }}</h2>
+    {% elsif page.title == "Projects" %}
+        <header class="header-home {% if site.animation %}animated{% endif %}">
+            <h1 class="title">proj·ects</h1>
+            <h2 class="description">side projects / kaggle / miscellaneous
+        </header>
 
-        {% include social-links.html %}
-    </header>
+    {% else %}
+        <header class="header-home {% if site.animation %}animated{% endif %}">
+            {% if site.about %}
+                <a class="link" href="{{ site.url }}/about">
+                    <img class="selfie" alt="{{ site.name }}" src="{% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}" />
+                </a>
+            {% else %}
+                <span class="link">
+                    <img class="selfie" alt="{{ site.name }}" src="{% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}" />
+                </span>
+            {% endif %}
+
+            <h1 class="title">{{ site.name }}</h1>
+            <h2 class="description">{{ site.bio }}</h2>
+
+            {% include social-links.html %}
+        </header>
+    {% endif %}
 {% endif %}
 
 {% include nav.html %}
