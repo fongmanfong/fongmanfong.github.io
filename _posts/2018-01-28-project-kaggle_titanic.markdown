@@ -23,11 +23,11 @@ Remember Jack & Rose? Leo & Kate Winslet? Titanic movie? Nostalgia? I wish this 
 
 ## TL;DR
 
-This exercise is the infamous Titanic dataset that all Kaggle newbs start out with. It is a classification problem where we need to predict if certain passengers will survive. Accuracy is used to evaluate predictions. At the time of submission, I was ranked 391/9642, top 4% on the leaderboard with an accuracy of 81.8%. By no means is this a perfect submission, nor did I write beautiful Python code; it is simply my scratch pad for attempting this problem set, so don't judge!
+This exercise is the infamous Titanic dataset that all Kaggle newbs start out with. It is a classification problem where we need to predict if passengers will survive. Accuracy is used to evaluate predictions. At the time of submission, I was ranked 391/9642, top 4% on the leaderboard with an accuracy of 81.8%. By no means is this a perfect submission, nor did I write beautiful Python code. At the end, I have a section on considerations and improvements.
 
 ![png](/assets/images/2018-01-27-project-kaggle_titanic/output_2_0.png)
 
-In this post, I won't include all the analysis and code. If you want the detailed step by step, checkout my GitHub here <https://github.com/fongmanfong/kaggle_competitions/blob/master/titanic/Titanic.ipynb>. Instead I'll walk through the key areas of the analysis/prediction.
+I won't include all the analysis and code in this post, just the key areas of my analysis and prediction. If you want the detailed step by step, checkout my [GitHub here](https://github.com/fongmanfong/kaggle_competitions/blob/master/titanic/Titanic.ipynb).
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -45,15 +45,15 @@ In this post, I won't include all the analysis and code. If you want the detaile
 - [Considerations / Improvements](#considerations)
 
 ## <a name="introduction">Introduction</a>
-<span name="introduction">As mentioned, the goal here is the predict whether specific passengers will survive this accident. For more information about this kaggle competition, you can checkout <https://www.kaggle.com/c/titanic>. There are two data sets provided, both with information about passengers. The training set has the target variable that identifies if a particular passenger survived. The test set contains the same set of information for different passengers but it does not have a target variable. We are required to predict if those passengers in the test set survives.</span>
+As mentioned, the goal here is the predict whether passengers will survive this accident. For more information about this kaggle competition, you can checkout <https://www.kaggle.com/c/titanic>. A list of passenger information is broke into two datasets, training and test. The training set has information on whether a passenger survived while in the test set this information is hidden. We will use the training set to train our prediction model and apply onto the test set and kaggle will provide an accuracy score. 
 
 
 Information provided in the data sets:
 - PassengerID: ID of the passenger
-- Survived: 1 = Survived, 0 = Dead
+- Survived: If a passenger survived
 - Pclass: Ticket class
 - Name: Passenger's name
-- Sex: Contains male and female
+- Sex: Gender
 - Age: Age of passenger
 - SibSp: Number of siblings and/or spouses
 - Parch: Number of parents and/or children
@@ -140,7 +140,7 @@ Information provided in the data sets:
 
 ## <a name="feature"> Feature Exploration / Cleaning / Engineering </a>
 
-Here we'll go through one feature at a time exploring it, cleaning it if necessary and do feature engineering if it make sense.
+Here we'll go through one feature at a time, exploring it, cleaning it if necessary and do feature engineering if it make sense.
 
 ### <a name="sex">Sex</a>
 
@@ -150,12 +150,6 @@ First off, we see from above Sex is a categorical variable so I'll define a simp
 ```python
 def map_sex(df, col):
     return df[col].map(lambda x: 1 if x == 'female' else 0)
-```
-
-
-```python
-train['Sex'] = map_sex(train, 'Sex')
-test['Sex'] = map_sex(test, 'Sex')
 ```
 
 
@@ -214,13 +208,6 @@ sns.countplot(x="Embarked", data=train, palette="Greens_d");
 ![png](/assets/images/2018-01-27-project-kaggle_titanic/output_21_0.png)
 
 
-
-```python
-train['Embarked'].fillna('S', inplace=True)
-test['Embarked'].fillna('S', inplace=True)
-```
-
-
 ```python
 sns.barplot(x="Embarked", y="Survived", hue="Embarked", data=train, ci=None);
 ```
@@ -231,7 +218,7 @@ sns.barplot(x="Embarked", y="Survived", hue="Embarked", data=train, ci=None);
 
 ### <a name="name">Name</a>
 
-Name is a little more interesting. At face value, there are many different names but we see they all have a title. We know Mr. is different than Mrs. and we also see some interesting titles like Master. and Lady., not your typical titles. Doing some research on Google we can see how these titles are used. We also noticed that there are alot of titles that mean similar things, or identifying personel with a different social class. We can group these titles together into intuitive categories to see if we see anything interesting with survival rate.
+Name is a little more interesting. At face value, there are many different names but we see they all have a title. We know Mr. is different than Mrs. and we also see some interesting titles like Master. and Lady. Doing some research on Google we can see how these titles are used. We also notice that there are a lot of titles with similar meaning as well as titles that identify personnel with a different social class. We can group these titles together into intuitive categories to see if they have correlation with survival rate.
 
 
 ```python
@@ -692,7 +679,7 @@ train['Cabin - Parsed'] = train['Cabin - Parsed'].map(lambda x: x if x in test['
 
 ### <a name="ticket">Ticket</a>
 
-The approach that I've taken here is to look at the ticket label. Similar intuition as cabin, ticket label usually identify a certain type of ticket for certain types of passenger. Looking at the ticket values below, we see that there are a lot of clean up work to be done, like cleaning up empty spaces. I've made a simple assumption here that the periods are just noise. One hypothesis is that tickets were hand written back then so there could of been more variation to how tickets were labelled, like some people wrote A and some wrote just A (period). Tickets with no identifier I've given it a no identifier label. Ticket labels with a / I've considered it to have two labels and introduced a label count variable.
+The approach that I've taken here is to look at the ticket label. Similar intuition as cabin, ticket label usually identify a certain type of ticket for certain types of passenger. Looking at the ticket values below, we see that there are a lot of clean up work to be done, like cleaning up empty spaces. I've made a simple assumption here that the periods are just noise. One hypothesis is that tickets were hand written back then so there could of been more variation to how tickets were labelled, like some people wrote A and some wrote A (period). Tickets with no identifier I've given it a no identifier label. Ticket labels with a / I've considered it to have two labels and introduced a label count variable.
 
 
 ```python
@@ -868,9 +855,9 @@ h.map(plt.hist, "Age", color="steelblue", bins=85, lw=0)
 ![png](/assets/images/2018-01-27-project-kaggle_titanic/output_61_1.png)
 
 
-Results are fairly intuitive, young to middle age male has the lowest chance of survival, while young to middle age women has the highest chance. This is one layer or segmenting. Other variables I am considering is Title and Family size. Title make sense because a title like Miss vs Mrs sometimes can give u some indication of the age range of an individual. Family size also make sense because certain age groups tend to travel certain way. E.g possibly people travelling individual tend to fall into a younger a group while people with a family of tend to fall into higher age group. 
+Results are fairly intuitive, young to middle age male has the lowest chance of survival, while young to middle age women has the highest chance. This is one variable for our segmentation. Other variables I am considering are Title and Family size. Title make sense because a title like Miss vs Mrs sometimes can give you some indication of the age range of an individual. Family size also make sense because certain age groups tend to travel certain way. E.g people travelling individually tend to fall into a younger a group while people travelling with a family tend to fall into higher age group. 
 
-Because family size is a continious variable, It would be easier to segment our data by labelling and converting it into a categorical variable. I've defined three labels:
+Because family size is a continuous variable, It would be easier to segment our data by labelling and converting it into a categorical variable. I've defined three labels:
 
 - Individuals (Family size = 0)
 - Small Family (Family size between 1 and 3)
@@ -1190,7 +1177,7 @@ X_train = train_cleaned[feature_name]
 y_train = train_cleaned[target_name]
 ```
 
-I've decided to go with tree based based classified for several, but not perfect, reasons. Firstly because tree classifiers provide out-of-the-box tool to identify feature importance based on information gain in the algorithm. This is handy as we can fine tune the model by eliminating not important features that could overfit our model. Secondly I specifically chose RandomForest for its robustness. This is not to say my reasonings are perfect, I should definitely take the time to explore additional models and benchmark against each other to compare overall predictability.
+I've decided to go with tree based based classified for several, but not perfect, reasons. Firstly because tree classifiers provide out-of-the-box tool to identify feature importance based on information gain in the algorithm. This is handy as we can fine tune the model by eliminating not important features that could overfit our model. Secondly I specifically chose RandomForest for its robustness. This is not to say my reasonings are perfect, I should definitely take the time to explore additional models and benchmark it against each other to compare overall predictability.
 
 
 ```python
@@ -1407,7 +1394,7 @@ feature_importance.sort('Importance', ascending=False)
 
 
 
-The first classifier is to understand the feature importance based on information gain. Using this information, I remove variables that has less than median importance between all features. Using the remaining features, I retrain the Random Forest Classifier. Using the GridSearch approach provided by sklearn, I do a 10 fold stratified cross validation with different model parameters to see which one gives back the highest accuracy score. This is requires a lot of computational resource so I've kept the number of parameters to tune to a limit number.
+The first classifier is to understand the feature importance based on information gain. Using this information, I remove variables that has less than median importance between all features. Using the remaining features, I retrain the Random Forest Classifier. Using the GridSearch approach provided by sklearn, I do a 10 fold stratified cross validation with different model parameters to see which one gives back the highest accuracy score. This requires a lot of computational resource so I've kept the number of parameters to tune to a limited number. After pruning, we're left with 18 features (~50%) for our Random Forest model
 
 
 ```python
@@ -1446,6 +1433,8 @@ grid_search = GridSearchCV(forest, param_grid = parameters, cv=StratifiedKFold(n
 
 grid_search.fit(X_train_pruned, y_train)
 ```
+
+From the grid search and 10 fold cross validation, we see that setting a max depth of 9, considering 20% of all features when looking for best split, and 200 estimators in our Random Forest produces the best average accuracy score of 83.6%. Note that this score is not reflective of the actual score that you will get back from kaggle as cross validation is done on the training set.
 
 ```python
 grid_search.best_score_
