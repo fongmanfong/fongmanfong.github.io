@@ -1,6 +1,9 @@
 # main text of home
 name: Jason Fong  
-bio: data // shopify // toronto
+bio: SELECT * FROM UNIVERSE
+
+#seo
+title: fongmanfong | SELECT * FROM UNIVERSE
 
 # twitter summary info
 description: A blog about data stuff
@@ -16,7 +19,7 @@ resume: false
 resume-external: false
 resume-url: https://google.com/?q=my+resume
 
-url: https://fongmanfong.github.io/
+#url: https://fongmanfong.github.io/
 # your url: http://USERNAME.github.io
 
 permalink: /:title/
