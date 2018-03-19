@@ -1,9 +1,9 @@
 # main text of home
-name: Jason Fong  
+name: fongmanfong
 bio: SELECT * FROM UNIVERSE
 
 #seo
-title: fongmanfong | SELECT * FROM UNIVERSE
+title: fongmanfong
 
 # twitter summary info
 description: A blog about data stuff
@@ -56,7 +56,7 @@ github: fongmanfong
 email: fongjason23@gmail.com
 
 authors:
-    johndoe:
+    jasonfong:
         name: Jason Fong
         bio: data // shopify // toronto
         external-image: false
