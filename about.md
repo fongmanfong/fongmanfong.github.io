@@ -4,7 +4,7 @@ layout: page
 ---
 ![Profile Image]({{ site.url }}/{{ site.picture }})
 
-<p>I solve interesting problems with data. Currently at Shopify on the Decision Science team specializing in marketing. I focus on ad spend optimization, attribution modelling, cluster analysis & merchant segmentation, lead scoring, and overall how to acquire new Shopify customers for less than their lifetime value.</p>
+<p>Hey, my name is Jason Fong and I solve interesting problems with data. Currently at Shopify on the Decision Science team specializing in marketing. I focus on ad spend optimization, attribution modelling, cluster analysis & merchant segmentation, lead scoring, and overall how to acquire new Shopify customers for less than their lifetime value.</p>
 
 <h2>Tools I Use</h2>
 
