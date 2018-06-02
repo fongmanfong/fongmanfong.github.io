@@ -2,14 +2,13 @@
    or page.title == "Blog"
    or page.title == "Projects"
    or page.title == "Tags"
-   or page.title == "Resource"
 %}{% assign showHeader = true %}{% endif %}
 
 {% if showHeader == true %}
     {% if page.title == "Blog" %}
         <header class="header-home {% if site.animation %}animated{% endif %}">
-            <h1 class="title">The <s>Feyn</s>Fongman Technique</h1>
-            <h2 class="description">Dumbing things down one thing at a time</h2>
+            <h1 class="title">ϵ̂</h1>
+            <h2 class="description">We can only learn and reduce our errors</h2>
 
             {% seo %}
         </header>
@@ -18,14 +17,6 @@
         <header class="header-home {% if site.animation %}animated{% endif %}">
             <h1 class="title">proj·ects</h1>
             <h2 class="description">side projects / kaggle / miscellaneous
-
-            {% seo %}
-        </header>
-
-    {% elsif page.title == "Resource" %}
-        <header class="header-home {% if site.animation %}animated{% endif %}">
-            <h1 class="title">Resource</h1>
-            <h2 class="description">academic papers, tutorials, books and more
 
             {% seo %}
         </header>
