@@ -22,12 +22,12 @@ Browsing on Twitter ultimately led me to Frank Harrell’s RMS course. I was ver
 
 # Course Summary
 
-The course I took is called Regression Modelling Strategies, taught by Professor Frank Harrell at Vanderbilt University. This is a condensed version of the course that he regularly teaches during the semester. The course is broken up into 1 day (optional) R tutorial and 4 full days of course content. The course is intended for Masters and PhD level students, so there is an expectation that students already have a competent understanding of multiple regression modelling. The course becomes very challenging to follow along if students do not have that understanding or are not prepared for the lectures. For more information about the course, see [here](http://biostat.mc.vanderbilt.edu/wiki/Main/RmS).
+The course I took is called Regression Modelling Strategies, taught by Professor [Frank Harrell](https://twitter.com/f2harrell?lang=en) at Vanderbilt University. This is a condensed version of the course that he regularly teaches during the semester. The course is broken up into 1 day (optional) R tutorial and 4 full days of course content. The course is intended for Masters and PhD level students, so there is an expectation that students already have a competent understanding of multiple regression modelling. The course becomes very challenging to follow along if students do not have that understanding or are not prepared for the lectures. For more information about the course, see [here](http://biostat.mc.vanderbilt.edu/wiki/Main/RmS).
 
 The philosophy of the course and Professor Frank Harrell can be summarized as:
-It is more productive to make model fit step by step than to postulate a simple model and find out what went wrong
-Carefully fitting improper model is better than badly fitting a well chosen one
-A good overall strategy is to decide how many degrees of freedom (regression parameters) can be “spent”, where they should be spent, and to spend them with no regrets
+* It is more productive to make model fit step by step than to postulate a simple model and find out what went wrong
+* Carefully fitting improper model is better than badly fitting a well chosen one
+* A good overall strategy is to decide how many degrees of freedom (regression parameters) can be “spent”, where they should be spent, and to spend them with no regrets
 
 Topics covered in the course include but not limited to the following:
 
@@ -66,9 +66,9 @@ This is a traditional statistics course, with a focus on biostatistics, and not 
 
 Overall I highly recommend other people in the industry to take this course if they are interested in learning more about regression modelling and also have similar reservations towards conferences and long form education. I think there are couple things that can really help enhance this experience (from the perspective of someone coming from industry and not academia):
 
-Going as a team (4-5 people): Not only is this option more cost efficient, I think you can learn a lot more when you are studying as a group, by asking each other questions, sharing ideas and thoughts, challenging ideas etc.
-Being very prepared for the course so that you can have meaningful conversations with Professor Frank Harrell. There were several students that were taking the course for the 2nd or 3rd time and I noticed that they were able to have a deep conversations with the Professor about specific problems they are working on. There is a textbook that comes with this course, and I would highly encourage going over that material before attending the course as well during the course.
-Course improvements mentioned below.
+* Going as a team (4-5 people): Not only is this option more cost efficient, I think you can learn a lot more when you are studying as a group, by asking each other questions, sharing ideas and thoughts, challenging ideas etc.
+* Being very prepared for the course so that you can have meaningful conversations with Professor Frank Harrell. There were several students that were taking the course for the 2nd or 3rd time and I noticed that they were able to have a deep conversations with the Professor about specific problems they are working on. There is a textbook that comes with this course, and I would highly encourage going over that material before attending the course as well during the course.
+* Course improvements mentioned below.
 
 # Improvements
 
