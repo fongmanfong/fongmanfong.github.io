@@ -4,9 +4,6 @@ layout: post
 date: 2018-06-02
 image: /assets/images/markdown.jpg
 headerImage: false
-projects: false
-blog: true
-hidden: true
 tag:
 - level up
 star: true
