@@ -33,6 +33,10 @@ layout: page
 	<li>Content Marketing</li>
 </ul>
 
+<h2>Also!</h2>
+
+Check me out @ [Le Petit Coffee](www.lepetitcoffee.ca)
+
 <h2>So...</h2>
 
 <p>If you've landed on this page and read up to this point, lets connect! Add me on LinkedIn, follow me on Instagram or Twitter, or even better lets get COFFEE (if you're in Toronto). In the end, you've learned so much about me and I would love to learn more about you!
