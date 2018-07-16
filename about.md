@@ -35,7 +35,7 @@ layout: page
 
 <h2>Also!</h2>
 
-Check me out @ [Le Petit Coffee](www.lepetitcoffee.ca)
+Check me out @ [Le Petit Coffee](https://www.lepetitcoffee.ca)
 
 <h2>So...</h2>
 
