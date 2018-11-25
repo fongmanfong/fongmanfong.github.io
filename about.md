@@ -4,9 +4,27 @@ layout: page
 ---
 ![Profile Image]({{ site.url }}/{{ site.picture }})
 
-<p>Hey, my name is Jason Fong and I solve interesting problems with data. Currently at Shopify on the Decision Science team specializing in marketing. I focus on ad spend optimization, attribution modelling, cluster analysis & merchant segmentation, lead scoring, and overall how to acquire new Shopify customers for less than their lifetime value.</p>
+<h2>TL;DR</h2>
 
-<h2>Tools I Use</h2>
+<p>Hey, nice to meet you! My name is Jason Fong and I am a Data Scientist focused on solving marketing problems. I am currently working at [Shopify](https://www.shopify.com) and I'm leading the Marketing Data Science team. My job is pretty straightforward: help marketing make more data informed decisions to reduce cost of acquisition and increase revenue for Shopify. How do I do this with my team? Well that is not so straightforward. We're working on things like:
+
+<ul class="skill-list">
+	<li>Building and productionizing an algorithmic (moving beyond just heuristic based) attribution model</li>
+	<li>Media Mix Modelling to complement multi-touch attribution model</li>
+	<li>Geo Experimentation to understand causal impact of marketing campaigns</li>
+	<li>Building a state-of-the-art data infrastructure with scalable data pipelines to produce high quality datasets </li>
+	<li>Statistical Modelling & Machine Learning (churn, LTV, propensity, lead scoring etc)</li>
+	<li>A/B testing and experiments</li>
+	<li>Causal inference and regression modelling to understand what levers move the needle</li>
+</ul>
+
+<p>Marketing is a complex domain and I'm just scratching the surface. If you're also solving marketing problems with data science, please reach out, I would love to connect and exchange knowledge. I'm also hiring, please reach out if you would like to learn more about the work I'm doing at Shopify. Add me on LinkedIn, follow me on Instagram or Twitter, or even better lets get COFFEE (if you're in Toronto). </p>
+
+
+
+<h2>The Nitty Gritty (Resume)</h2>
+
+<h4>Tools I use:</h4>
 
 <ul class="skill-list">
 	<li>Python</li>
@@ -22,28 +40,14 @@ layout: page
 	<li>Git / Github</li>
 </ul>
 
-<h2>Areas I Specialize In</h2>
+<h4>Work Experience</h4>
 
-<ul>
-	<li>Digital Marketing Strategy</li>
-	<li>SEM / SEO / PPC</li>
-	<li>Remarketing</li>
-	<li>Paid & Organic Social Media</li>
-	<li>Email Marketing</li>
-	<li>Content Marketing</li>
-</ul>
-
-<h2>Also!</h2>
-
-Check me out @ [Le Petit Coffee](https://www.lepetitcoffee.ca)
-
-<h2>So...</h2>
-
-<p>If you've landed on this page and read up to this point, lets connect! Add me on LinkedIn, follow me on Instagram or Twitter, or even better lets get COFFEE (if you're in Toronto). In the end, you've learned so much about me and I would love to learn more about you!
-
-If data is not your thing, that is totally cool. Aside from being a data nerd, I'm a competitive volleyball player (both court and beach). If volleyball is up your alleyway, lets play.</p>
-
-![Markdowm Image][1]
+<p>Data Science Lead - <b>Shopify</b> (Oct 2018 - Present)</p>
+<p>Data Scentist - <b>Shopify</b> (July 2016 - Sept 2018)</p>
+<p>Marketing Manager - <b>TELUS</b> (Sept 2014 - July 2016)</p>
+<p>Product Specialist Pricing Strategy - <b>TELUS</b> (Jun 2013 - Sept 2014)</p>
+<p>Consulting Analyst  - <b>Accenture</b> (Jan 2012 - Jun 2013)</p>
 
 
-[1]: https://media.giphy.com/media/EqNfolceUiLPW/giphy.gif
+<h4>Education</h4>
+<p>University of Waterloo - Systems Design Engineering (2006 - 2011)</p>
