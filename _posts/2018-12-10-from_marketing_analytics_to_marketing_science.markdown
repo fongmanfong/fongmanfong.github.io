@@ -28,7 +28,7 @@ But since then, the move from purely analytics approach to more science-based ha
 - Looking at the data overtime and identifying trends. Are things doing better or worse? 
 - Segmenting / slicing & dicing the data to look at it from different perspectives. Are certain segments doing better or worse?
 - Making decisions based on correlation between variables. When X moves, Y seems to move as well, so let’s do more of X.
-Using the data to make predictions in the future. Will this person churn?
+- Using the data to make predictions in the future. Will this person churn?
 
 **Science approach** → interpreting data and drawing inference with scientific rigor
 - Attempting to find causality between variables, what’s causing what and at what magnitude
