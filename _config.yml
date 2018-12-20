@@ -84,9 +84,11 @@ width: normal
 about: true
 resource: true
 blog: true
+contact: true
 
 # if you don't need projects, comment the *projects* configs below
 projects: true
+
 
 # do you want to show the "read time" of the posts?
 read-time: true
