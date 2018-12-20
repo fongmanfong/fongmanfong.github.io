@@ -4,6 +4,9 @@ layout: post
 date: 2017-05-01
 image: /assets/images/markdown.jpg
 headerImage: false
+projects: true
+blog: false
+hidden: true
 tag:
 - feature engineering
 - dimension reduction

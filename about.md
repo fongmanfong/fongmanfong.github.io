@@ -2,11 +2,12 @@
 title: About
 layout: page
 ---
-![Profile Image]({{ site.url }}/{{ site.picture }})
+
+![jpeg](/assets/images/black_white_profile.jpg)
 
 <h2>TL;DR</h2>
 
-<p>Hey, nice to meet you! My name is Jason Fong and I am a Data Scientist focused on solving marketing problems. I am currently working at [Shopify] (https://www.shopify.com) and I'm leading the Marketing Data Science team. My job is pretty straightforward: help marketing make more data informed decisions to reduce cost of acquisition and increase revenue for Shopify. How do I do this with my team? Well that is not so straightforward. We're working on things like:
+<p>Hey, nice to meet you! My name is **Jason Fong** and I am a Data Scientist focused on solving marketing problems. I am currently working at [Shopify](https://www.shopify.com) and I'm leading the Marketing Data Science team. My job is pretty straightforward: help marketing make more data informed decisions to reduce cost of acquisition and increase revenue for Shopify. How do I do this with my team? Well that is not so straightforward. We're working on things like:
 
 <ul class="skill-list">
 	<li>Building and productionizing an algorithmic (moving beyond just heuristic based) attribution model</li>

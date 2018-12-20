@@ -1,9 +1,12 @@
 ---
-title: "What's up with snakes and bears?"
+title: "Intro To Python and Pandas?"
 layout: post
 date: 2017-02-18
 image: /assets/images/markdown.jpg
 headerImage: false
+projects: true
+blog: false
+hidden: true
 tag:
 - pandas
 - introduction
