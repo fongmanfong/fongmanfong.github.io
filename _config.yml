@@ -19,7 +19,7 @@ resume: false
 resume-external: false
 resume-url: https://google.com/?q=my+resume
 
-#url: https://fongmanfong.github.io/
+url: fongmanfong.github.io
 # your url: http://USERNAME.github.io
 
 permalink: /:title/
@@ -37,7 +37,7 @@ disqus:
   categories: [blog, project] # only show disqus for posts that have these categories
 
 # if you don't have any of social below, comment the line
-facebook: fong.jason
+facebook: Fong.Jason
 twitter: fongmanfong
 # google: mygoogle
 instagram: fongmanfong
