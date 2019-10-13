@@ -7,7 +7,7 @@ weight: 3
 
 # **About Me**
 
-![](/fongmanfong/assets/images/black_white_profile.jpg)
+![](/assets/images/black_white_profile.jpg)
 
 Hey, nice to meet you! My name is Jason Fong (more popularly known as fongmanfong) and I am a Data Scientist focused on solving marketing problems. I am currently working at Shopify and I'm leading the Marketing Data Science team.
 

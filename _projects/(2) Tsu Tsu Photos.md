@@ -1,7 +1,7 @@
 ---
 name: Tsu Tsu Photos
 tools: [Photography, Travel]
-image: /fongmanfong/assets/images/project_thumbnails/tsutsu.png
+image: /assets/images/project_thumbnails/tsutsu.png
 description: A personal photograpy album sharing my travel adventures
 external_url: https://tsu-tsu-photos.github.io/
 ---
