@@ -12,7 +12,7 @@ repository          : fongmanfong                      # repository metadata on 
 ### Author Info ###
 author:
   name              : Jason Fong
-  image             : /fongmanfong/assets/self_photo.jpg
+  image             : /assets/self_photo.jpg
 # behance           : your_username
 # dribbble          : your_username
   email             : fongjason23@gmail.com
