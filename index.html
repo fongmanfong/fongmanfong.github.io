@@ -62,34 +62,148 @@ title: Jason Fong
 
   <!-- Desktop map (hidden on mobile) -->
   <div class="map-container">
-    <!-- Road path connecting all towns -->
-    <svg class="map-paths" viewBox="0 0 700 420" preserveAspectRatio="none"
-         xmlns="http://www.w3.org/2000/svg">
-      <!-- Sandy road -->
-      <path d="M 614,50 L 614,188 L 86,188 L 86,326 L 614,326"
-            stroke="#C8B89A" stroke-width="18" fill="none"
+
+    <!-- TERRAIN SVG: landmass, mountains, trees, roads -->
+    <svg class="map-terrain" viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+
+      <!-- Main landmass -->
+      <polygon points="30,20 120,8 280,5 450,8 600,18 672,45 688,140 685,260 668,370 580,408 420,412 250,410 110,400 35,360 10,260 15,140 25,60"
+               fill="#5C9E45"/>
+      <!-- Inner lighter grass (depth) -->
+      <polygon points="55,40 140,25 300,20 460,23 595,35 650,65 666,155 663,250 648,355 573,392 408,398 258,396 118,386 50,348 30,262 36,155 46,78"
+               fill="#6AB050" opacity="0.45"/>
+
+      <!-- MOUNTAINS — top right corner -->
+      <rect x="617" y="22" width="12" height="12" fill="#9B8060"/>
+      <rect x="605" y="34" width="36" height="10" fill="#8A7050"/>
+      <rect x="593" y="44" width="60" height="10" fill="#7A6040"/>
+      <rect x="636" y="16" width="12" height="12" fill="#B09070"/>
+      <rect x="624" y="28" width="36" height="10" fill="#9A8060"/>
+      <rect x="612" y="38" width="60" height="10" fill="#8A7050"/>
+      <rect x="617" y="22" width="12" height="5"  fill="#EDE8DC" opacity="0.8"/>
+      <rect x="636" y="16" width="12" height="5"  fill="#F0ECE4" opacity="0.9"/>
+
+      <!-- MOUNTAINS — bottom left corner -->
+      <rect x="28" y="342" width="10" height="10" fill="#9B8060"/>
+      <rect x="18" y="352" width="30" height="10" fill="#8A7050"/>
+      <rect x="8"  y="362" width="50" height="10" fill="#7A6040"/>
+      <rect x="44" y="338" width="10" height="10" fill="#B09070"/>
+      <rect x="34" y="348" width="30" height="10" fill="#9A8060"/>
+      <rect x="28" y="342" width="10" height="5"  fill="#EDE8DC" opacity="0.6"/>
+
+      <!-- TREES — top-left cluster -->
+      <circle cx="82"  cy="82"  r="16" fill="#2D6B1E"/>
+      <circle cx="108" cy="70"  r="14" fill="#358522"/>
+      <circle cx="132" cy="84"  r="13" fill="#2D6B1E"/>
+      <circle cx="97"  cy="100" r="12" fill="#3A8A28"/>
+      <circle cx="122" cy="64"  r="11" fill="#2D6B1E"/>
+      <circle cx="82"  cy="85"  r="7"  fill="#226015"/>
+      <circle cx="108" cy="73"  r="6"  fill="#226015"/>
+      <circle cx="132" cy="87"  r="6"  fill="#226015"/>
+
+      <!-- TREES — top centre -->
+      <circle cx="282" cy="50"  r="14" fill="#2D6B1E"/>
+      <circle cx="308" cy="40"  r="12" fill="#358522"/>
+      <circle cx="330" cy="54"  r="13" fill="#2D6B1E"/>
+      <circle cx="297" cy="64"  r="11" fill="#3A8A28"/>
+      <circle cx="318" cy="32"  r="10" fill="#226015"/>
+
+      <!-- TREES — right side (between rows) -->
+      <circle cx="646" cy="248" r="13" fill="#2D6B1E"/>
+      <circle cx="666" cy="258" r="11" fill="#358522"/>
+      <circle cx="653" cy="273" r="12" fill="#2D6B1E"/>
+      <circle cx="642" cy="271" r="7"  fill="#226015"/>
+
+      <!-- TREES — bottom centre -->
+      <circle cx="314" cy="370" r="13" fill="#2D6B1E"/>
+      <circle cx="340" cy="360" r="11" fill="#358522"/>
+      <circle cx="364" cy="374" r="12" fill="#2D6B1E"/>
+      <circle cx="327" cy="380" r="10" fill="#3A8A28"/>
+      <circle cx="352" cy="380" r="8"  fill="#226015"/>
+
+      <!-- TREES — left side (between rows) -->
+      <circle cx="50"  cy="232" r="12" fill="#2D6B1E"/>
+      <circle cx="34"  cy="222" r="10" fill="#358522"/>
+      <circle cx="50"  cy="220" r="6"  fill="#226015"/>
+
+      <!-- ROAD: wide sandy base then dashed centre -->
+      <path d="M 586,51 L 586,189 L 114,189 L 114,327 L 586,327"
+            stroke="#C8B89A" stroke-width="22" fill="none"
             stroke-linecap="square" stroke-linejoin="miter"/>
-      <!-- Darker centre line (road marking) -->
-      <path d="M 614,50 L 614,188 L 86,188 L 86,326 L 614,326"
-            stroke="#A89070" stroke-width="4" fill="none"
-            stroke-dasharray="12 10" stroke-linecap="square"
-            stroke-linejoin="miter"/>
+      <path d="M 586,51 L 586,189 L 114,189 L 114,327 L 586,327"
+            stroke="#A89070" stroke-width="5" fill="none"
+            stroke-dasharray="10 8" stroke-linecap="square"/>
+
     </svg>
 
-    <!-- Towns — loop reversed so index 1 = Accenture (start), 5 = Shopify HQ (★) -->
+    <!-- Town buildings -->
     {% for job in site.data.timeline %}
     <div class="town town-{{ forloop.index }}{% if job.current %} current{% endif %}"
          data-company="{{ job.company }}"
          data-title="{{ job.title }}"
          data-period="{{ job.from }}–{{ job.to }}"
          data-desc="{{ job.description }}">
-      <div class="town-icon">{% if job.current %}★{% else %}◆{% endif %}</div>
-      <div class="town-name">{{ job.city }}</div>
+      <div class="town-roof"></div>
+      <div class="town-body">
+        <div class="town-years">{{ job.from }}–{{ job.to }}</div>
+        <div class="town-name">{{ job.city }}</div>
+        <div class="town-click-row">
+          <span class="town-ping"></span>
+          <span class="town-click-label">▶ ENTER</span>
+        </div>
+      </div>
     </div>
     {% endfor %}
 
-    <!-- Player marker above current position (Shopify HQ = town-5, right side, bottom row) -->
-    <div class="player-sprite">YOU<br>▼</div>
+    <!-- Pixel-art player character at current position (Shopify HQ = town-5) -->
+    <div class="player-char">
+      <div class="player-name-tag">JASON</div>
+      <svg class="player-sprite-svg" width="32" height="48" viewBox="0 0 32 48" xmlns="http://www.w3.org/2000/svg">
+        <!-- hair -->
+        <rect x="0"  y="0"  width="32" height="4" fill="#8B5E3C"/>
+        <!-- face row 1 -->
+        <rect x="0"  y="4"  width="4"  height="4" fill="#8B5E3C"/>
+        <rect x="4"  y="4"  width="24" height="4" fill="#D4956A"/>
+        <rect x="28" y="4"  width="4"  height="4" fill="#8B5E3C"/>
+        <!-- face row 2 — eyes -->
+        <rect x="0"  y="8"  width="4"  height="4" fill="#8B5E3C"/>
+        <rect x="4"  y="8"  width="4"  height="4" fill="#D4956A"/>
+        <rect x="8"  y="8"  width="4"  height="4" fill="#2C1A0F"/>
+        <rect x="12" y="8"  width="8"  height="4" fill="#D4956A"/>
+        <rect x="20" y="8"  width="4"  height="4" fill="#2C1A0F"/>
+        <rect x="24" y="8"  width="4"  height="4" fill="#D4956A"/>
+        <rect x="28" y="8"  width="4"  height="4" fill="#8B5E3C"/>
+        <!-- face row 3 -->
+        <rect x="0"  y="12" width="4"  height="4" fill="#8B5E3C"/>
+        <rect x="4"  y="12" width="24" height="4" fill="#D4956A"/>
+        <rect x="28" y="12" width="4"  height="4" fill="#8B5E3C"/>
+        <!-- face row 4 — mouth -->
+        <rect x="0"  y="16" width="4"  height="4" fill="#8B5E3C"/>
+        <rect x="4"  y="16" width="4"  height="4" fill="#D4956A"/>
+        <rect x="8"  y="16" width="16" height="4" fill="#C55A45"/>
+        <rect x="24" y="16" width="4"  height="4" fill="#D4956A"/>
+        <rect x="28" y="16" width="4"  height="4" fill="#8B5E3C"/>
+        <!-- chin -->
+        <rect x="4"  y="20" width="24" height="4" fill="#8B5E3C"/>
+        <!-- shirt -->
+        <rect x="0"  y="24" width="32" height="4" fill="#C4622D"/>
+        <!-- arms/hands + shirt -->
+        <rect x="0"  y="28" width="4"  height="4" fill="#D4956A"/>
+        <rect x="4"  y="28" width="24" height="4" fill="#C4622D"/>
+        <rect x="28" y="28" width="4"  height="4" fill="#D4956A"/>
+        <!-- shirt lower -->
+        <rect x="4"  y="32" width="24" height="4" fill="#C4622D"/>
+        <!-- pants -->
+        <rect x="4"  y="36" width="24" height="4" fill="#5C4033"/>
+        <!-- legs -->
+        <rect x="4"  y="40" width="8"  height="4" fill="#5C4033"/>
+        <rect x="20" y="40" width="8"  height="4" fill="#5C4033"/>
+        <!-- shoes -->
+        <rect x="4"  y="44" width="8"  height="4" fill="#1A0F08"/>
+        <rect x="20" y="44" width="8"  height="4" fill="#1A0F08"/>
+      </svg>
+    </div>
+
   </div>
 
   <!-- Mobile fallback timeline list -->

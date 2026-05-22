@@ -276,63 +276,61 @@ body {
   width: 700px;
   height: 420px;
   position: relative;
-  background-color: var(--grass);
-  background-image:
-    linear-gradient(45deg, var(--grass-dark) 25%, transparent 25%, transparent 75%, var(--grass-dark) 75%),
-    linear-gradient(45deg, var(--grass-dark) 25%, transparent 25%, transparent 75%, var(--grass-dark) 75%);
-  background-size: 24px 24px;
-  background-position: 0 0, 12px 12px;
+  background-color: #1E4F8C;
   border: 4px solid var(--ink);
   overflow: hidden;
 }
 
-.map-paths {
+.map-terrain {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   pointer-events: none;
   z-index: 1;
 }
 
+/* TOWN BUILDINGS */
 .town {
   position: absolute;
-  width: 132px;
+  width: 148px;
   background: var(--cream-dark);
   border: 4px solid var(--ink);
-  padding: 10px 8px;
   cursor: pointer;
-  text-align: center;
   z-index: 2;
-  transition: transform 0.12s;
+  overflow: hidden;
+  transition: transform 0.12s, box-shadow 0.12s;
 }
 
 .town:hover {
-  transform: scale(1.06);
-  box-shadow: 4px 4px 0 var(--ink);
+  transform: scale(1.08) translateY(-3px);
+  box-shadow: 0 6px 0 var(--ink);
 }
 
 .town.current {
   border-color: var(--gold);
-  box-shadow: 0 0 0 2px var(--gold);
 }
 
-/* Town positions — loop is reversed so index 1 = Accenture (oldest) */
-.town-1 { top: 20px;  right: 20px; }
-.town-2 { top: 158px; right: 20px; }
-.town-3 { top: 158px; left: 20px;  }
-.town-4 { top: 296px; left: 20px;  }
-.town-5 { top: 296px; right: 20px; }
+/* Coloured roof strip at the top of each building */
+.town-roof {
+  height: 8px;
+  width: 100%;
+  background: #7B5EA7;
+}
+.town[data-company="TELUS"]    .town-roof { background: var(--sage); }
+.town[data-company="Shopify"]  .town-roof { background: var(--terracotta); }
+.town.current                  .town-roof { background: var(--gold); }
 
-.town-icon {
-  font-size: 10px;
-  color: var(--terracotta);
-  margin-bottom: 6px;
+.town-body {
+  padding: 8px 10px 10px;
+  text-align: center;
 }
 
-.town.current .town-icon {
-  color: var(--gold);
+.town-years {
+  font-size: 5px;
+  color: var(--muted);
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+  display: block;
 }
 
 .town-name {
@@ -340,19 +338,72 @@ body {
   line-height: 1.8;
   letter-spacing: 0.5px;
   word-break: break-word;
+  margin-bottom: 7px;
 }
 
-.player-sprite {
-  position: absolute;
-  top: 252px;
-  right: 55px;
-  z-index: 3;
-  font-size: 7px;
-  color: var(--gold);
-  text-align: center;
-  line-height: 1.6;
-  animation: float 2s ease-in-out infinite;
+.town-click-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* Pulsing ping dot — makes it obvious the town is clickable */
+.town-ping {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--terracotta);
+  border-radius: 50%;
+  animation: pulse-ping 1.6s ease-in-out infinite;
+}
+.town.current .town-ping { background: var(--gold); }
+
+@keyframes pulse-ping {
+  0%, 100% { transform: scale(1);   opacity: 1;   }
+  50%       { transform: scale(2);   opacity: 0.3; }
+}
+
+.town-click-label {
+  font-size: 4px;
+  color: var(--terracotta);
   letter-spacing: 1px;
+}
+.town.current .town-click-label { color: var(--gold); }
+
+/* Town positions */
+.town-1 { top: 20px;  right: 40px; }
+.town-2 { top: 158px; right: 40px; }
+.town-3 { top: 158px; left: 40px;  }
+.town-4 { top: 296px; left: 40px;  }
+.town-5 { top: 296px; right: 40px; }
+
+/* PIXEL-ART PLAYER CHARACTER */
+.player-char {
+  position: absolute;
+  top: 240px;
+  right: 98px;
+  z-index: 4;
+  text-align: center;
+  animation: float 2.5s ease-in-out infinite;
+}
+
+.player-name-tag {
+  font-size: 4px;
+  background: var(--ink);
+  color: var(--gold);
+  padding: 2px 5px;
+  margin-bottom: 2px;
+  letter-spacing: 1px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.player-sprite-svg {
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  margin: 0 auto;
 }
 
 /* Dialog triggered by clicking a town */
@@ -415,9 +466,9 @@ body {
 .mobile-timeline { display: none; }
 
 @media (max-width: 760px) {
-  .map-container    { display: none; }
-  .player-sprite    { display: none; }
-  .mobile-timeline  { display: block; }
+  .map-container   { display: none; }
+  .player-char     { display: none; }
+  .mobile-timeline { display: block; }
 }
 
 .mobile-job {
