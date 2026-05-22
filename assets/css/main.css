@@ -233,11 +233,14 @@ body {
 }
 
 .trainer-field {
-  font-size: 7px;
+  font-size: 8px;
+  font-family: 'Courier New', monospace;
   line-height: 2;
 }
 
 .trainer-field .label {
+  font-family: var(--font);
+  font-size: 7px;
   color: var(--muted);
 }
 
