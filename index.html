@@ -61,28 +61,38 @@ title: Jason Fong
 
 <!-- ==================== JOURNEY ==================== -->
 <section id="journey" class="journey-section">
-  <div class="section-label">✦ QUEST LOG</div>
+  <div class="section-label">✦ LEVEL UP</div>
 
-  <p class="journey-intro">Career quests — tap any entry to read more.</p>
+  <p class="journey-intro">The journey from Lv.01 to present day.</p>
 
-  <div class="quest-log pixel-box">
+  <div class="levelup-feed">
     {% for job in site.data.timeline %}
-    <div class="quest-entry{% if job.current %} active{% endif %}">
-      <button class="quest-header">
-        <span class="quest-id">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
-        <span class="quest-name">{{ job.company }}</span>
-        <span class="quest-years">{{ job.from }}–{{ job.to }}</span>
-        <span class="quest-badge">{% if job.current %}★ ACTIVE{% else %}DONE{% endif %}</span>
-        <span class="quest-chevron">▶</span>
-      </button>
-      <div class="quest-body" hidden>
-        <div class="quest-role">{{ job.title }}</div>
-        <div class="quest-desc">{{ job.description }}</div>
+    <div class="levelup-entry{% if job.current %} current{% endif %}">
+      <div class="levelup-dot-wrap">
+        <div class="levelup-dot"></div>
+      </div>
+      <div class="levelup-card">
+        <div class="levelup-header">
+          <span class="levelup-lv">LV.{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+          <span class="levelup-status">{% if job.current %}★ ACTIVE{% else %}COMPLETE{% endif %}</span>
+        </div>
+        <div class="levelup-title">JASON leveled up!</div>
+        <div class="levelup-meta">
+          <span class="levelup-role">{{ job.title }}</span>
+          <span class="levelup-company">@ {{ job.company }}</span>
+          <span class="levelup-years">{{ job.from }} – {{ job.to }}</span>
+        </div>
+        <div class="levelup-xp">
+          <span class="levelup-xp-label">EXP</span>
+          <div class="levelup-xp-track">
+            <div class="levelup-xp-fill" style="width:{{ job.xp }}%"></div>
+          </div>
+          <span class="levelup-xp-time">{{ job.duration }}</span>
+        </div>
         {% if job.rewards %}
-        <div class="quest-rewards">
-          <span class="quest-rewards-label">REWARDS:</span>
+        <div class="levelup-rewards">
           {% for reward in job.rewards %}
-          <span class="quest-reward-tag">{{ reward }}</span>
+          <div class="levelup-reward">+ {{ reward }} obtained!</div>
           {% endfor %}
         </div>
         {% endif %}

@@ -264,7 +264,7 @@ body {
 }
 
 /* ======================== */
-/*   JOURNEY / QUEST LOG    */
+/*   JOURNEY / LEVEL UP     */
 /* ======================== */
 
 .journey-section {
@@ -277,148 +277,172 @@ body {
   font-size: 7px;
   font-family: 'Courier New', monospace;
   color: var(--muted);
-  margin-bottom: 28px;
+  margin-bottom: 36px;
   line-height: 2;
 }
 
-.quest-log {
-  max-width: 580px;
-  overflow: hidden;
+/* Vertical track */
+.levelup-feed {
+  max-width: 560px;
+  position: relative;
+  padding-left: 28px;
 }
 
-.quest-entry {
-  border-bottom: 3px solid var(--ink);
+.levelup-feed::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 7px;
+  bottom: 7px;
+  width: 3px;
+  background: var(--ink);
 }
 
-.quest-entry:last-child {
-  border-bottom: none;
+.levelup-entry {
+  position: relative;
+  margin-bottom: 32px;
 }
 
-.quest-header {
-  width: 100%;
+.levelup-entry:last-child {
+  margin-bottom: 0;
+}
+
+/* Dot on the track */
+.levelup-dot-wrap {
+  position: absolute;
+  left: -28px;
+  top: 10px;
+}
+
+.levelup-dot {
+  width: 15px;
+  height: 15px;
+  background: var(--muted);
+  border: 3px solid var(--ink);
+}
+
+.levelup-entry.current .levelup-dot {
+  background: var(--gold);
+}
+
+/* Card */
+.levelup-card {
   background: var(--cream-dark);
-  border: none;
-  padding: 14px 16px;
-  cursor: pointer;
-  font-family: var(--font);
+  border: 3px solid var(--ink);
+  padding: 14px 16px 16px;
+}
+
+.levelup-entry.current .levelup-card {
+  border-color: var(--gold);
+}
+
+.levelup-header {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  text-align: left;
-  transition: background 0.1s;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
 }
 
-.quest-header:hover {
-  background: var(--path);
-}
-
-.quest-entry.open > .quest-header {
-  background: var(--terracotta);
-  color: var(--cream);
-}
-
-.quest-id {
-  font-size: 6px;
-  color: var(--muted);
-  flex-shrink: 0;
-  width: 22px;
-}
-
-.quest-entry.open .quest-id {
-  color: rgba(245, 240, 232, 0.55);
-}
-
-.quest-name {
+.levelup-lv {
   font-size: 7px;
-  flex: 1;
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.quest-years {
-  font-size: 5px;
   color: var(--muted);
-  flex-shrink: 0;
-  white-space: nowrap;
 }
 
-.quest-entry.open .quest-years {
-  color: rgba(245, 240, 232, 0.55);
-}
-
-.quest-badge {
-  font-size: 5px;
-  color: var(--muted);
-  flex-shrink: 0;
-  white-space: nowrap;
-}
-
-.quest-entry.active .quest-badge {
+.levelup-entry.current .levelup-lv {
   color: var(--gold);
 }
 
-.quest-entry.open .quest-badge {
-  color: var(--cream);
-}
-
-.quest-entry.active.open .quest-badge {
-  color: var(--gold);
-}
-
-.quest-chevron {
-  font-size: 8px;
-  flex-shrink: 0;
-  color: var(--muted);
-  transition: transform 0.15s;
-}
-
-.quest-entry.open .quest-chevron {
-  transform: rotate(90deg);
-  color: var(--cream);
-}
-
-.quest-body {
-  background: var(--cream);
-  padding: 16px 20px 20px;
-  border-top: 3px solid var(--ink);
-}
-
-.quest-role {
-  font-size: 7px;
-  color: var(--terracotta);
-  margin-bottom: 12px;
-  letter-spacing: 0.5px;
-}
-
-.quest-desc {
-  font-size: 8px;
-  font-family: 'Courier New', monospace;
-  line-height: 2.1;
-  color: var(--ink);
-}
-
-.quest-rewards {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 6px;
-  margin-top: 14px;
-}
-
-.quest-rewards-label {
+.levelup-status {
   font-size: 5px;
   color: var(--muted);
   letter-spacing: 1px;
 }
 
-.quest-reward-tag {
-  font-size: 5px;
-  background: var(--ink);
-  color: var(--cream);
-  padding: 3px 8px;
+.levelup-entry.current .levelup-status {
+  color: var(--gold);
+}
+
+.levelup-title {
+  font-size: 8px;
+  color: var(--ink);
+  margin-bottom: 10px;
   letter-spacing: 0.5px;
+}
+
+.levelup-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  margin-bottom: 12px;
+}
+
+.levelup-role {
+  font-size: 6px;
+  color: var(--terracotta);
+}
+
+.levelup-company {
+  font-size: 6px;
+  color: var(--ink);
+}
+
+.levelup-years {
+  font-size: 5px;
+  color: var(--muted);
+  font-family: 'Courier New', monospace;
+}
+
+/* EXP bar */
+.levelup-xp {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.levelup-xp-label {
+  font-size: 5px;
+  color: var(--muted);
+  flex-shrink: 0;
+  letter-spacing: 1px;
+}
+
+.levelup-xp-track {
+  flex: 1;
+  height: 8px;
+  background: var(--cream);
+  border: 2px solid var(--ink);
+  overflow: hidden;
+}
+
+.levelup-xp-fill {
+  height: 100%;
+  background: var(--sage);
+}
+
+.levelup-entry.current .levelup-xp-fill {
+  background: var(--gold);
+}
+
+.levelup-xp-time {
+  font-size: 5px;
+  color: var(--muted);
+  flex-shrink: 0;
+  font-family: 'Courier New', monospace;
+}
+
+/* Reward lines */
+.levelup-rewards {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.levelup-reward {
+  font-size: 6px;
+  color: var(--grass-dark);
+  font-family: 'Courier New', monospace;
+  line-height: 1.8;
 }
 
 /* ========================= */
