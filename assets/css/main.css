@@ -318,7 +318,7 @@ body {
 }
 
 .quest-id {
-  font-size: 6px;
+  font-size: 5px;
   color: var(--muted);
   flex-shrink: 0;
   width: 22px;
@@ -395,7 +395,7 @@ body {
 .quest-desc {
   font-size: 8px;
   font-family: 'Courier New', monospace;
-  line-height: 2.1;
+  line-height: 2.2;
   color: var(--ink);
 }
 
@@ -436,7 +436,7 @@ body {
   color: var(--muted);
   font-family: 'Courier New', monospace;
   margin-bottom: 40px;
-  line-height: 2.2;
+  line-height: 2;
 }
 
 .badges-grid {
@@ -493,7 +493,7 @@ body {
   color: var(--cream);
   border: 2px solid var(--muted);
   padding: 8px 12px;
-  font-size: 6px;
+  font-size: 5px;
   white-space: nowrap;
   z-index: 10;
   box-shadow: 3px 3px 0 var(--muted);
@@ -558,6 +558,7 @@ body {
   border: 2px solid var(--path);
   padding: 8px 14px;
   transition: background 0.1s, color 0.1s;
+  letter-spacing: 1px;
 }
 
 .footer-links a:hover {
@@ -566,7 +567,7 @@ body {
 }
 
 .footer-copy {
-  font-size: 6px;
+  font-size: 5px;
   color: var(--muted);
   letter-spacing: 2px;
 }
