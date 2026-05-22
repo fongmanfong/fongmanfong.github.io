@@ -4,6 +4,7 @@
   from: 2012
   to: 2013
   description: "Started the career journey. Built analytical thinking across client engagements."
+  rewards: ["ANALYTICS", "STRUCTURED THINKING", "CLIENT WORK"]
 
 - company: TELUS
   city: "TELUS TOWN"
@@ -11,6 +12,7 @@
   from: 2013
   to: 2014
   description: "Shaped pricing strategy in Mobility. First taste of data-driven decisions at scale."
+  rewards: ["PRICING STRATEGY", "DATA ANALYSIS", "TELCO DOMAIN"]
 
 - company: TELUS
   city: "TELUS HEIGHTS"
@@ -18,6 +20,7 @@
   from: 2014
   to: 2016
   description: "Led the Big Data Program. Brought data science thinking into marketing channels."
+  rewards: ["BIG DATA", "MARKETING SCIENCE", "CHANNEL STRATEGY"]
 
 - company: Shopify
   city: "SHOPIFY DEPOT"
@@ -25,6 +28,7 @@
   from: 2016
   to: 2018
   description: "Solved marketing problems at scale: attribution, experimentation, and growth."
+  rewards: ["ATTRIBUTION", "A/B TESTING", "GROWTH"]
 
 - company: Shopify
   city: "SHOPIFY HQ"
@@ -32,4 +36,5 @@
   from: 2018
   to: Present
   description: "Leading marketing data science & engineering team: MMM, geo experiments, causal inference."
+  rewards: ["MMM", "CAUSAL INFERENCE", "GEO EXPERIMENTS", "TEAM LEADERSHIP"]
   current: true

@@ -1,25 +1,25 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-  // === MAP TOWN DIALOG ===
-  var dialog = document.getElementById('town-dialog');
-  var towns = document.querySelectorAll('.town');
+  // === QUEST LOG ACCORDION ===
+  document.querySelectorAll('.quest-header').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var entry = this.closest('.quest-entry');
+      var isOpen = entry.classList.contains('open');
 
-  towns.forEach(function (town) {
-    town.addEventListener('click', function () {
-      dialog.querySelector('.dialog-company').textContent = this.dataset.company;
-      dialog.querySelector('.dialog-job-title').textContent = this.dataset.title;
-      dialog.querySelector('.dialog-period').textContent = this.dataset.period;
-      dialog.querySelector('.dialog-desc').textContent = this.dataset.desc;
-      dialog.style.display = 'block';
-      dialog.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      // Close all entries
+      document.querySelectorAll('.quest-entry').forEach(function (e) {
+        e.classList.remove('open');
+        var body = e.querySelector('.quest-body');
+        if (body) body.hidden = true;
+      });
+
+      // Open the clicked entry if it was closed
+      if (!isOpen) {
+        entry.classList.add('open');
+        var body = entry.querySelector('.quest-body');
+        if (body) body.hidden = false;
+      }
     });
   });
-
-  var closeBtn = document.getElementById('dialog-close-btn');
-  if (closeBtn) {
-    closeBtn.addEventListener('click', function () {
-      dialog.style.display = 'none';
-    });
-  }
 
 });
