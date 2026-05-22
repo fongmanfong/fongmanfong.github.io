@@ -76,26 +76,27 @@ title: Jason Fong
           <span class="levelup-lv">LV.{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
           <span class="levelup-status">{% if job.current %}★ ACTIVE{% else %}COMPLETE{% endif %}</span>
         </div>
-        <div class="levelup-title">JASON leveled up!</div>
-        <div class="levelup-meta">
-          <span class="levelup-role">{{ job.title }}</span>
-          <span class="levelup-company">@ {{ job.company }}</span>
-          <span class="levelup-years">{{ job.from }} – {{ job.to }}</span>
-        </div>
-        <div class="levelup-xp">
-          <span class="levelup-xp-label">EXP</span>
-          <div class="levelup-xp-track">
-            <div class="levelup-xp-fill" style="width:{{ job.xp }}%"></div>
+        <div class="levelup-body">
+          <div class="levelup-title">JASON leveled up!</div>
+          <div class="levelup-meta">
+            <div class="levelup-role">{{ job.title }}</div>
+            <div class="levelup-company-line">@ {{ job.company }} &nbsp;·&nbsp; {{ job.from }}–{{ job.to }}</div>
           </div>
-          <span class="levelup-xp-time">{{ job.duration }}</span>
+          <div class="levelup-xp">
+            <span class="levelup-xp-label">EXP</span>
+            <div class="levelup-xp-track">
+              <div class="levelup-xp-fill" style="width:{{ job.xp }}%"></div>
+            </div>
+            <span class="levelup-xp-time">{{ job.duration }}</span>
+          </div>
+          {% if job.rewards %}
+          <div class="levelup-rewards">
+            {% for reward in job.rewards %}
+            <div class="levelup-reward">+ {{ reward }} obtained!</div>
+            {% endfor %}
+          </div>
+          {% endif %}
         </div>
-        {% if job.rewards %}
-        <div class="levelup-rewards">
-          {% for reward in job.rewards %}
-          <div class="levelup-reward">+ {{ reward }} obtained!</div>
-          {% endfor %}
-        </div>
-        {% endif %}
       </div>
     </div>
     {% endfor %}
