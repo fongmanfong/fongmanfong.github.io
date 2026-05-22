@@ -1,13 +1,15 @@
 ---
+layout: default
+title: 404 — Jason Fong
+permalink: /404.html
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-
-  {% include head.html %}
-
-  <body class="container">
-    {% include 404.html %}
-  </body>
-
-</html>
+<div class="hero" style="min-height: 60vh;">
+  <p class="hero-eyebrow">ERROR CODE</p>
+  <h1 class="hero-title">404</h1>
+  <p class="hero-subtitle">WILD PAGE NOT FOUND</p>
+  <p class="hero-tagline">That page fled into tall grass.<br>Try heading back to the start.</p>
+  <div style="margin-top: 40px;">
+    <a href="{{ '/' | relative_url }}" style="color: var(--path); font-family: var(--font); font-size: 9px; border: 2px solid var(--path); padding: 10px 16px; text-decoration: none;">[← RETURN HOME]</a>
+  </div>
+</div>

@@ -1,25 +1,18 @@
 <!DOCTYPE html>
-
-<!--
-  portfolYOU Jekyll theme by Youssef Raafat
-  Free for personal and commercial use under the MIT license
-  https://github.com/YoussefRaafatNasry/portfolYOU
--->
-
-<html lang="en" class="h-100">
-
-{% include head.html %}
-
-<body class="d-flex flex-column h-100">
-
-  <main class="flex-shrink-0 container mt-5">
-  {% include navbar.html %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="icon" href="{{ '/assets/favicon.ico' | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
   {{ content }}
-  </main>
-
-  {% include footer.html %}
-  {% include scripts.html %}
-
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
-
 </html>

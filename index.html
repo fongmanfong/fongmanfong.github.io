@@ -1,5 +1,189 @@
 ---
 layout: default
+title: Jason Fong
 ---
 
-{% include landing.html %}
+<!-- ==================== HERO ==================== -->
+<div class="hero">
+  <nav class="hero-nav">
+    <a href="#about">[ABOUT]</a>
+    <a href="#journey">[JOURNEY]</a>
+    <a href="#badges">[BADGES]</a>
+  </nav>
+
+  <p class="hero-eyebrow">CAREER EDITION · GBC VERSION</p>
+
+  <h1 class="hero-title">JASON<br>FONG</h1>
+
+  <p class="hero-subtitle">DATA SCIENCE LEAD</p>
+
+  <p class="hero-tagline">
+    Marketing × Machine Learning × Making Things Clear
+  </p>
+
+  <p class="hero-press blink">▼ PRESS START ▼</p>
+</div>
+
+<!-- ==================== ABOUT ==================== -->
+<section id="about" class="about-section">
+  <div class="section-label">✦ TRAINER CARD</div>
+
+  <div class="trainer-card pixel-box">
+    <div class="trainer-card-header">TRAINER CARD</div>
+
+    <div class="trainer-card-main">
+      <div class="trainer-photo">
+        <img src="{{ '/assets/self_photo.jpg' | relative_url }}" alt="Jason Fong">
+      </div>
+      <div class="trainer-info">
+        <div class="trainer-field"><span class="label">NAME:</span>&nbsp; JASON FONG</div>
+        <div class="trainer-field"><span class="label">CLASS:</span>&nbsp; DATA MASTER</div>
+        <div class="trainer-field"><span class="label">ID NO.:</span>&nbsp; 001337</div>
+        <div class="trainer-field"><span class="label">CITY:</span>&nbsp; TORONTO</div>
+        <div class="trainer-field"><span class="label">TEAM:</span>&nbsp; SHOPIFY</div>
+      </div>
+    </div>
+
+    <div class="dialog-box trainer-bio">
+      <p>Data scientist focused on helping marketing teams make<br>smarter, faster decisions with data.</p>
+      <p>Currently leading the Marketing Data Science &amp; Engineering<br>team at Shopify. Specialties: causal inference, MMM,<br>geo-experiments, and A/B testing at scale.</p>
+      <p>Coffee meetings in Toronto always welcome. <span class="blink">▼</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== JOURNEY ==================== -->
+<section id="journey" class="journey-section">
+  <div class="section-label">✦ OVERWORLD MAP</div>
+
+  <p class="journey-intro">
+    Click any town to learn more about that chapter.
+  </p>
+
+  <!-- Desktop map (hidden on mobile) -->
+  <div class="map-container">
+    <!-- Road path connecting all towns -->
+    <svg class="map-paths" viewBox="0 0 700 420" preserveAspectRatio="none"
+         xmlns="http://www.w3.org/2000/svg">
+      <!-- Sandy road -->
+      <path d="M 614,50 L 614,188 L 86,188 L 86,326 L 614,326"
+            stroke="#C8B89A" stroke-width="18" fill="none"
+            stroke-linecap="square" stroke-linejoin="miter"/>
+      <!-- Darker centre line (road marking) -->
+      <path d="M 614,50 L 614,188 L 86,188 L 86,326 L 614,326"
+            stroke="#A89070" stroke-width="4" fill="none"
+            stroke-dasharray="12 10" stroke-linecap="square"
+            stroke-linejoin="miter"/>
+    </svg>
+
+    <!-- Towns — loop reversed so index 1 = Accenture (start), 5 = Shopify HQ (★) -->
+    {% for job in site.data.timeline %}
+    <div class="town town-{{ forloop.index }}{% if job.current %} current{% endif %}"
+         data-company="{{ job.company }}"
+         data-title="{{ job.title }}"
+         data-period="{{ job.from }}–{{ job.to }}"
+         data-desc="{{ job.description }}">
+      <div class="town-icon">{% if job.current %}★{% else %}◆{% endif %}</div>
+      <div class="town-name">{{ job.city }}</div>
+    </div>
+    {% endfor %}
+
+    <!-- Player marker above current position (Shopify HQ = town-5, right side, bottom row) -->
+    <div class="player-sprite">YOU<br>▼</div>
+  </div>
+
+  <!-- Mobile fallback timeline list -->
+  <div class="mobile-timeline">
+    {% for job in site.data.timeline %}
+    <div class="mobile-job">
+      <div class="mj-company">{{ job.company }}{% if job.current %} ★{% endif %}</div>
+      <div class="mj-title">{{ job.title }}</div>
+      <div class="mj-period">{{ job.from }}–{{ job.to }}</div>
+      <div class="mj-desc">{{ job.description }}</div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Dialog box — populated by JS on town click -->
+  <div id="town-dialog" class="dialog-box town-dialog" style="display:none;">
+    <div class="dialog-title-row">
+      <span class="dialog-company"></span>
+      <span class="dialog-period"></span>
+    </div>
+    <div class="dialog-job-title"></div>
+    <div class="dialog-desc"></div>
+    <button class="dialog-close-btn" id="dialog-close-btn">▼ CLOSE</button>
+  </div>
+</section>
+
+<!-- ==================== BADGES ==================== -->
+<section id="badges" class="badges-section">
+  <div class="section-label">✦ GYM BADGES</div>
+
+  <p class="badges-intro">
+    8 badges earned on the road to the Elite Four.
+  </p>
+
+  <div class="badges-grid">
+
+    <div class="badge badge-fire">
+      <div class="badge-shape"><div class="badge-gem"></div></div>
+      <div class="badge-label">PYTHON</div>
+      <div class="badge-tooltip">PYTHON BADGE obtained!</div>
+    </div>
+
+    <div class="badge badge-ground">
+      <div class="badge-shape"><div class="badge-gem"></div></div>
+      <div class="badge-label">SQL</div>
+      <div class="badge-tooltip">SQL BADGE obtained!</div>
+    </div>
+
+    <div class="badge badge-grass">
+      <div class="badge-shape"><div class="badge-gem"></div></div>
+      <div class="badge-label">ML / STATS</div>
+      <div class="badge-tooltip">ML BADGE obtained!</div>
+    </div>
+
+    <div class="badge badge-water">
+      <div class="badge-shape"><div class="badge-gem"></div></div>
+      <div class="badge-label">CAUSAL INF.</div>
+      <div class="badge-tooltip">CAUSAL BADGE obtained!</div>
+    </div>
+
+    <div class="badge badge-elec">
+      <div class="badge-shape"><div class="badge-gem"></div></div>
+      <div class="badge-label">A/B TESTING</div>
+      <div class="badge-tooltip">TESTING BADGE obtained!</div>
+    </div>
+
+    <div class="badge badge-rock">
+      <div class="badge-shape"><div class="badge-gem"></div></div>
+      <div class="badge-label">DATA INFRA</div>
+      <div class="badge-tooltip">INFRA BADGE obtained!</div>
+    </div>
+
+    <div class="badge badge-dark">
+      <div class="badge-shape"><div class="badge-gem"></div></div>
+      <div class="badge-label">SPARK / HADOOP</div>
+      <div class="badge-tooltip">SPARK BADGE obtained!</div>
+    </div>
+
+    <div class="badge badge-champ">
+      <div class="badge-shape"><div class="badge-gem"></div></div>
+      <div class="badge-label">LEADERSHIP</div>
+      <div class="badge-tooltip">CHAMPION BADGE obtained!</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <div class="footer-save">✦ &nbsp; GAME SAVED. &nbsp; ✦</div>
+  <div class="footer-links">
+    <a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">[GITHUB]</a>
+    <a href="https://linkedin.com/in/{{ site.author.linkedin }}" target="_blank" rel="noopener">[LINKEDIN]</a>
+    <a href="mailto:{{ site.author.email }}">[EMAIL]</a>
+  </div>
+  <div class="footer-copy">© JASON FONG 2025</div>
+</footer>
