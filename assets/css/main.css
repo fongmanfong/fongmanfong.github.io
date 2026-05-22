@@ -45,9 +45,8 @@ body {
   border: 4px solid var(--ink);
   box-shadow: inset 0 0 0 2px var(--muted);
   padding: 20px 24px;
-  font-size: 8px;
-  line-height: 2.2;
-  font-family: 'Courier New', monospace;
+  font-size: 7px;
+  line-height: 2.4;
 }
 
 .section-label {
@@ -167,7 +166,6 @@ body {
 .hero-tagline {
   font-size: 7px;
   color: var(--muted);
-  font-family: 'Courier New', monospace;
   letter-spacing: 1px;
   margin-bottom: 48px;
   line-height: 2;
@@ -233,14 +231,11 @@ body {
 }
 
 .trainer-field {
-  font-size: 8px;
-  font-family: 'Courier New', monospace;
+  font-size: 7px;
   line-height: 2;
 }
 
 .trainer-field .label {
-  font-family: var(--font);
-  font-size: 7px;
   color: var(--muted);
 }
 
@@ -278,7 +273,6 @@ body {
 
 .journey-intro {
   font-size: 7px;
-  font-family: 'Courier New', monospace;
   color: var(--muted);
   margin-bottom: 28px;
   line-height: 2;
@@ -396,9 +390,8 @@ body {
 }
 
 .quest-desc {
-  font-size: 8px;
-  font-family: 'Courier New', monospace;
-  line-height: 2.2;
+  font-size: 7px;
+  line-height: 2.4;
   color: var(--ink);
 }
 
@@ -437,7 +430,6 @@ body {
 .badges-intro {
   font-size: 7px;
   color: var(--muted);
-  font-family: 'Courier New', monospace;
   margin-bottom: 40px;
   line-height: 2;
 }
