@@ -248,7 +248,11 @@ body {
 .lore-section {
   max-width: 800px;
   margin: 0 auto;
-  padding: 0 24px 80px;
+  padding: 60px 24px 80px;
+}
+
+.lore-box {
+  max-width: 580px;
 }
 
 .lore-box p {
