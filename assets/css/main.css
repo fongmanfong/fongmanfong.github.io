@@ -241,16 +241,21 @@ body {
   color: var(--muted);
 }
 
-.trainer-bio {
-  margin-top: 0;
-  border-top: none;
+/* ======================== */
+/*      LORE SECTION        */
+/* ======================== */
+
+.lore-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
 }
 
-.trainer-bio p {
-  margin-bottom: 12px;
+.lore-box p {
+  margin-bottom: 16px;
 }
 
-.trainer-bio p:last-child {
+.lore-box p:last-child {
   margin-bottom: 0;
 }
 
