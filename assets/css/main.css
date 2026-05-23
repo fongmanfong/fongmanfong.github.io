@@ -1,3 +1,32 @@
+/* === SECTION SEPARATOR === */
+.separator {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--cab-phosphor-dim);
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  height: 0;
+  border-top: 3px dashed currentColor;
+  opacity: 0.7;
+}
+
+.separator-mark {
+  font-size: 10px;
+  letter-spacing: 6px;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--cab-phosphor);
+  text-shadow: 0 0 6px rgba(159, 232, 112, 0.5);
+}
+
 /* === VARIABLES === */
 :root {
   --cream:       #F5F0E8;
@@ -12,30 +41,9 @@
   --ink:         #2C1A0F;
   --muted:       #8B7355;
   --hero-bg:     #05060f;
+  --space-1:     #0a0d20;
+  --space-2:     #141838;
   --font:        'Press Start 2P', monospace;
-
-  /* Arcade cabinet palette */
-  --cab-body:         #C4622D;
-  --cab-body-dk:      #8B3F18;
-  --cab-body-lt:      #E08249;
-  --cab-trim:         #2C1A0F;
-  --cab-screen:       #0D2818;
-  --cab-phosphor:     #9FE870;
-  --cab-phosphor-dim: #5BAF4A;
-  --cab-yellow:       #E8B83A;
-  --cab-red:          #D43A2A;
-  --cab-blue:         #3A6BB8;
-  --cab-green:        #4FAE5C;
-
-  /* Font scale — clamp from mobile min → fluid → desktop max */
-  --fs-micro:  clamp(7px,  0.65vw,  9px);
-  --fs-body:   clamp(9px,  0.85vw, 12px);
-  --fs-ui:     clamp(10px, 0.95vw, 14px);
-  --fs-label:  clamp(11px, 1.05vw, 15px);
-  --fs-accent: clamp(10px, 1.10vw, 18px);
-
-  /* Single content column */
-  --w-content: clamp(600px, 70vw, 900px);
 }
 
 /* === RESET === */
@@ -70,13 +78,13 @@ body::before {
   pointer-events: none;
   z-index: 0;
   background-image:
-    radial-gradient(1px 1px at 12% 18%,  #fff,                      transparent 50%),
-    radial-gradient(1px 1px at 47% 73%,  #fff,                      transparent 50%),
-    radial-gradient(1px 1px at 78% 25%,  rgba(255,255,255,0.85),    transparent 50%),
-    radial-gradient(1.5px 1.5px at 30% 55%, #fff,                   transparent 50%),
-    radial-gradient(1.5px 1.5px at 88% 88%, rgba(180,210,255,0.9),  transparent 50%),
-    radial-gradient(1px 1px at 65% 12%,  rgba(255,220,180,0.85),    transparent 50%),
-    radial-gradient(2px 2px at 18% 82%,  rgba(255,255,255,0.95),    transparent 50%);
+    radial-gradient(1px 1px at 12% 18%,  #fff,                 transparent 50%),
+    radial-gradient(1px 1px at 47% 73%,  #fff,                 transparent 50%),
+    radial-gradient(1px 1px at 78% 25%,  rgba(255,255,255,0.85), transparent 50%),
+    radial-gradient(1.5px 1.5px at 30% 55%, #fff,              transparent 50%),
+    radial-gradient(1.5px 1.5px at 88% 88%, rgba(180,210,255,0.9), transparent 50%),
+    radial-gradient(1px 1px at 65% 12%,  rgba(255,220,180,0.85), transparent 50%),
+    radial-gradient(2px 2px at 18% 82%,  rgba(255,255,255,0.95), transparent 50%);
   background-size:
     180px 180px,
     220px 220px,
@@ -92,7 +100,7 @@ body::before {
 
 @keyframes twinkle {
   0%, 100% { opacity: 0.85; }
-  50%       { opacity: 0.55; }
+  50%      { opacity: 0.55; }
 }
 
 /* keep page content above the star field */
@@ -114,14 +122,14 @@ body::before {
     inset 0 0 0 2px var(--cab-phosphor-dim),
     0 0 22px rgba(159, 232, 112, 0.18);
   padding: 24px 28px;
-  font-size: var(--fs-body);
+  font-size: 10px;
   line-height: 2.2;
   color: var(--ink);
 }
 
 .section-label {
   display: inline-block;
-  font-size: var(--fs-label);
+  font-size: 12px;
   color: var(--terracotta);
   border: 3px solid var(--terracotta);
   padding: 6px 14px;
@@ -129,36 +137,6 @@ body::before {
   letter-spacing: 2px;
   transform: rotate(-1.5deg);
   opacity: 0.9;
-  align-self: flex-start;
-}
-
-/* === SECTION SEPARATOR === */
-.separator {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  max-width: var(--w-content);
-  margin: 0 auto;
-  padding: 0 24px;
-  color: var(--cab-phosphor-dim);
-}
-
-.separator::before,
-.separator::after {
-  content: "";
-  flex: 1;
-  height: 0;
-  border-top: 3px dashed currentColor;
-  opacity: 0.7;
-}
-
-.separator-mark {
-  font-size: 10px;
-  letter-spacing: 6px;
-  line-height: 1;
-  white-space: nowrap;
-  color: var(--cab-phosphor);
-  text-shadow: 0 0 6px rgba(159, 232, 112, 0.5);
 }
 
 /* === ANIMATIONS === */
@@ -181,14 +159,29 @@ body::before {
 .blink { animation: blink 1.2s step-end infinite; }
 
 /* ===================== */
-/*    HERO / ARCADE      */
+/*    HERO SECTION       */
 /* ===================== */
+
+/* === ARCADE CABINET PALETTE === */
+:root {
+  --cab-body:      #C4622D;   /* terracotta chassis */
+  --cab-body-dk:   #8B3F18;   /* shadow side */
+  --cab-body-lt:   #E08249;   /* highlight */
+  --cab-trim:      #2C1A0F;   /* black ink trim */
+  --cab-screen:    #0D2818;   /* CRT black-green */
+  --cab-phosphor:  #9FE870;   /* phosphor green */
+  --cab-phosphor-dim: #5BAF4A;
+  --cab-yellow:    #E8B83A;
+  --cab-red:       #D43A2A;
+  --cab-blue:      #3A6BB8;
+  --cab-green:     #4FAE5C;
+}
 
 .hero {
   min-height: 100vh;
   background:
     radial-gradient(ellipse 60% 40% at 50% 100%, rgba(74, 36, 130, 0.45) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 30% at 50% 40%,  rgba(36, 60, 130, 0.25) 0%, transparent 70%);
+    radial-gradient(ellipse 50% 30% at 50% 40%, rgba(36, 60, 130, 0.25) 0%, transparent 70%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -251,9 +244,11 @@ body::before {
   box-shadow:
     inset 0 4px 0 var(--cab-body-lt),
     inset 0 -4px 0 var(--cab-body-dk);
+  position: relative;
 }
 
 .cab-marquee-text {
+  font-family: var(--font);
   font-size: clamp(14px, 2.4vw, 20px);
   color: #FFF1D6;
   letter-spacing: 4px;
@@ -289,7 +284,8 @@ body::before {
   top: 18px;
   bottom: 18px;
   width: 10px;
-  background-image: radial-gradient(circle, var(--cab-trim) 35%, transparent 36%);
+  background-image:
+    radial-gradient(circle, var(--cab-trim) 35%, transparent 36%);
   background-size: 10px 10px;
   background-repeat: repeat-y;
   opacity: 0.7;
@@ -317,13 +313,14 @@ body::before {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: repeating-linear-gradient(
-    to bottom,
-    transparent 0,
-    transparent 2px,
-    rgba(0, 0, 0, 0.22) 2px,
-    rgba(0, 0, 0, 0.22) 3px
-  );
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 2px,
+      rgba(0, 0, 0, 0.22) 2px,
+      rgba(0, 0, 0, 0.22) 3px
+    );
   z-index: 3;
 }
 
@@ -359,7 +356,7 @@ body::before {
   font-size: clamp(26px, 5vw, 44px);
   color: var(--cab-phosphor);
   text-shadow:
-    0 0 8px  rgba(159, 232, 112, 0.75),
+    0 0 8px rgba(159, 232, 112, 0.75),
     0 0 18px rgba(159, 232, 112, 0.4);
   line-height: 1.5;
   margin-bottom: 22px;
@@ -390,7 +387,7 @@ body::before {
   text-shadow: 0 0 6px rgba(232, 184, 58, 0.6);
 }
 
-/* screen corner shims (CRT-style) */
+/* screen rounded inner-corner shims (CRT-style) */
 .cab-screen-corner {
   position: absolute;
   width: 14px;
@@ -398,9 +395,9 @@ body::before {
   background: var(--cab-trim);
   z-index: 4;
 }
-.cab-screen-corner--tl { top: -6px; left: -6px;   clip-path: polygon(0 0, 100% 0, 0 100%); }
-.cab-screen-corner--tr { top: -6px; right: -6px;  clip-path: polygon(0 0, 100% 0, 100% 100%); }
-.cab-screen-corner--bl { bottom: -6px; left: -6px;  clip-path: polygon(0 0, 0 100%, 100% 100%); }
+.cab-screen-corner--tl { top: -6px; left: -6px; clip-path: polygon(0 0, 100% 0, 0 100%); }
+.cab-screen-corner--tr { top: -6px; right: -6px; clip-path: polygon(0 0, 100% 0, 100% 100%); }
+.cab-screen-corner--bl { bottom: -6px; left: -6px; clip-path: polygon(0 0, 0 100%, 100% 100%); }
 .cab-screen-corner--br { bottom: -6px; right: -6px; clip-path: polygon(100% 0, 100% 100%, 0 100%); }
 
 /* ----- Control deck (slanted) ----- */
@@ -419,6 +416,7 @@ body::before {
     inset 5px 0 0 var(--cab-body-lt),
     inset -5px 0 0 var(--cab-body-dk),
     inset 0 -8px 0 var(--cab-body-dk);
+  position: relative;
 }
 
 /* joystick */
@@ -458,7 +456,8 @@ body::before {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #ff6b3d 0%, var(--cab-red) 45%, #8a1a10 100%);
+  background:
+    radial-gradient(circle at 35% 30%, #ff6b3d 0%, var(--cab-red) 45%, #8a1a10 100%);
   transform: translateX(-50%);
   box-shadow:
     inset 0 -3px 0 #6b0f08,
@@ -505,6 +504,7 @@ body::before {
   bottom: -22px;
   left: 50%;
   transform: translateX(-50%);
+  font-family: var(--font);
   font-size: 7px;
   color: #FFF1D6;
   letter-spacing: 1.5px;
@@ -571,7 +571,9 @@ body::before {
   text-shadow: 0 0 10px rgba(232, 184, 58, 0.9);
 }
 
-.cab-coin-panel:active { transform: translateY(4px); }
+.cab-coin-panel:active {
+  transform: translateY(4px);
+}
 
 .cab-coin-slot {
   width: 90px;
@@ -583,6 +585,7 @@ body::before {
 }
 
 .cab-coin-label {
+  font-family: var(--font);
   font-size: 7px;
   color: var(--cab-yellow);
   letter-spacing: 2px;
@@ -590,6 +593,7 @@ body::before {
   animation: blink 2s step-end infinite;
 }
 
+/* responsive */
 @media (max-width: 520px) {
   .cab-deck {
     flex-direction: column;
@@ -605,21 +609,19 @@ body::before {
 /* ========================= */
 
 .about-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 680px;
+  margin: 0 auto;
   padding: 100px 24px 80px;
 }
 
 .trainer-card {
-  width: 100%;
-  max-width: var(--w-content);
+  max-width: 680px;
 }
 
 .trainer-card-header {
   background: var(--terracotta);
   color: var(--cream);
-  font-size: var(--fs-ui);
+  font-size: 11px;
   padding: 12px 18px;
   letter-spacing: 3px;
 }
@@ -656,9 +658,8 @@ body::before {
 }
 
 .trainer-field {
-  font-size: var(--fs-body);
+  font-size: 10px;
   line-height: 2;
-  color: var(--ink);
 }
 
 .trainer-field .label {
@@ -670,15 +671,13 @@ body::before {
 /* ======================== */
 
 .lore-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 680px;
+  margin: 0 auto;
   padding: 60px 24px 80px;
 }
 
 .lore-box {
-  width: 100%;
-  max-width: var(--w-content);
+  max-width: 680px;
 }
 
 .lore-box p {
@@ -694,29 +693,25 @@ body::before {
 /* ======================== */
 
 .journey-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 680px;
+  margin: 0 auto;
   padding: 80px 24px;
 }
 
 .journey-intro {
-  font-size: var(--fs-body);
+  font-size: 10px;
   color: var(--muted);
   margin-bottom: 28px;
   line-height: 2;
-  width: 100%;
-  max-width: var(--w-content);
 }
 
 .quest-log {
-  width: 100%;
-  max-width: var(--w-content);
+  max-width: 680px;
   overflow: hidden;
 }
 
 .quest-entry {
-  border-bottom: 3px solid var(--cab-phosphor-dim);
+  border-bottom: 3px solid var(--ink);
 }
 
 .quest-entry:last-child {
@@ -735,7 +730,6 @@ body::before {
   gap: 10px;
   text-align: left;
   transition: background 0.1s;
-  color: var(--ink);
 }
 
 .quest-header:hover {
@@ -748,7 +742,7 @@ body::before {
 }
 
 .quest-id {
-  font-size: var(--fs-micro);
+  font-size: 8px;
   color: var(--muted);
   flex-shrink: 0;
   width: 28px;
@@ -759,7 +753,7 @@ body::before {
 }
 
 .quest-name {
-  font-size: var(--fs-body);
+  font-size: 10px;
   flex: 1;
   min-width: 0;
   overflow: hidden;
@@ -768,7 +762,7 @@ body::before {
 }
 
 .quest-years {
-  font-size: var(--fs-micro);
+  font-size: 8px;
   color: var(--muted);
   flex-shrink: 0;
   white-space: nowrap;
@@ -779,7 +773,7 @@ body::before {
 }
 
 .quest-badge {
-  font-size: var(--fs-micro);
+  font-size: 8px;
   color: var(--muted);
   flex-shrink: 0;
   white-space: nowrap;
@@ -798,7 +792,7 @@ body::before {
 }
 
 .quest-chevron {
-  font-size: var(--fs-ui);
+  font-size: 11px;
   flex-shrink: 0;
   color: var(--muted);
   transition: transform 0.15s;
@@ -812,18 +806,18 @@ body::before {
 .quest-body {
   background: var(--cream);
   padding: 16px 20px 20px;
-  border-top: 3px solid var(--cab-phosphor-dim);
+  border-top: 3px solid var(--ink);
 }
 
 .quest-role {
-  font-size: var(--fs-body);
+  font-size: 10px;
   color: var(--terracotta);
   margin-bottom: 14px;
   letter-spacing: 0.5px;
 }
 
 .quest-desc {
-  font-size: var(--fs-body);
+  font-size: 10px;
   line-height: 2.2;
   color: var(--ink);
 }
@@ -837,13 +831,13 @@ body::before {
 }
 
 .quest-rewards-label {
-  font-size: var(--fs-micro);
+  font-size: 8px;
   color: var(--muted);
   letter-spacing: 1px;
 }
 
 .quest-reward-tag {
-  font-size: var(--fs-micro);
+  font-size: 8px;
   background: var(--ink);
   color: var(--cream);
   padding: 5px 10px;
@@ -855,24 +849,19 @@ body::before {
 /* ========================= */
 
 .badges-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 680px;
+  margin: 0 auto;
   padding: 80px 24px;
 }
 
 .badges-intro {
-  font-size: var(--fs-body);
+  font-size: 10px;
   color: var(--muted);
   margin-bottom: 40px;
   line-height: 2;
-  width: 100%;
-  max-width: var(--w-content);
 }
 
 .badges-grid {
-  width: 100%;
-  max-width: var(--w-content);
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
   gap: 32px 20px;
@@ -910,7 +899,7 @@ body::before {
 }
 
 .badge-label {
-  font-size: var(--fs-micro);
+  font-size: 8px;
   text-align: center;
   letter-spacing: 1px;
   line-height: 1.8;
@@ -926,7 +915,7 @@ body::before {
   color: var(--cream);
   border: 2px solid var(--muted);
   padding: 10px 14px;
-  font-size: var(--fs-micro);
+  font-size: 8px;
   white-space: nowrap;
   z-index: 10;
   box-shadow: 3px 3px 0 var(--muted);
@@ -961,7 +950,7 @@ body::before {
 /* =================== */
 
 .footer {
-  background: transparent;
+  background: var(--hero-bg);
   color: var(--cream);
   padding: 72px 24px;
   text-align: center;
@@ -969,7 +958,7 @@ body::before {
 }
 
 .footer-save {
-  font-size: var(--fs-accent);
+  font-size: 10px;
   color: var(--gold);
   margin-bottom: 36px;
   letter-spacing: 4px;
@@ -987,7 +976,7 @@ body::before {
 .footer-links a {
   color: var(--path);
   text-decoration: none;
-  font-size: var(--fs-micro);
+  font-size: 8px;
   border: 2px solid var(--path);
   padding: 8px 14px;
   transition: background 0.1s, color 0.1s;
@@ -1000,7 +989,7 @@ body::before {
 }
 
 .footer-copy {
-  font-size: var(--fs-micro);
+  font-size: 5px;
   color: var(--muted);
   letter-spacing: 2px;
 }
