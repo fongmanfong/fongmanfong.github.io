@@ -5,24 +5,70 @@ title: Jason Fong
 
 <!-- ==================== HERO ==================== -->
 <div class="hero">
-  <nav class="hero-nav">
-    <a href="#about">[ABOUT]</a>
-    <a href="#lore">[LORE]</a>
-    <a href="#journey">[JOURNEY]</a>
-    <a href="#badges">[BADGES]</a>
-  </nav>
+  <div class="arcade-floor"></div>
 
-  <p class="hero-eyebrow">CAREER EDITION · GBC VERSION</p>
+  <div class="arcade-cabinet">
+    <!-- Marquee -->
+    <div class="cab-marquee">
+      <span class="cab-marquee-bolt">★</span>
+      <span class="cab-marquee-text">JASON&nbsp;FONG</span>
+      <span class="cab-marquee-bolt">★</span>
+    </div>
 
-  <h1 class="hero-title">JASON<br>FONG</h1>
+    <!-- Screen housing -->
+    <div class="cab-bezel">
+      <div class="cab-screen">
+        <div class="cab-scanlines"></div>
+        <div class="cab-screen-content">
+          <p class="hero-eyebrow">CAREER EDITION · GBC VERSION</p>
+          <h1 class="hero-title">JASON<br>FONG</h1>
+          <p class="hero-subtitle">DATA SCIENCE LEAD</p>
+          <p class="hero-tagline">Marketing × Machine Learning × Making Things Clear</p>
+          <p class="hero-press blink">▼ PRESS START ▼</p>
+        </div>
+        <div class="cab-screen-corner cab-screen-corner--tl"></div>
+        <div class="cab-screen-corner cab-screen-corner--tr"></div>
+        <div class="cab-screen-corner cab-screen-corner--bl"></div>
+        <div class="cab-screen-corner cab-screen-corner--br"></div>
+      </div>
+    </div>
 
-  <p class="hero-subtitle">DATA SCIENCE LEAD</p>
+    <!-- Control deck -->
+    <div class="cab-deck">
+      <div class="joystick">
+        <div class="joystick-base"></div>
+        <div class="joystick-stick"></div>
+        <div class="joystick-ball"></div>
+      </div>
 
-  <p class="hero-tagline">
-    Marketing × Machine Learning × Making Things Clear
-  </p>
+      <div class="cab-buttons">
+        <a href="#about" class="arc-btn arc-btn--red">
+          <span class="arc-btn-top"></span>
+          <span class="arc-btn-label">ABOUT</span>
+        </a>
+        <a href="#lore" class="arc-btn arc-btn--yellow">
+          <span class="arc-btn-top"></span>
+          <span class="arc-btn-label">LORE</span>
+        </a>
+        <a href="#journey" class="arc-btn arc-btn--blue">
+          <span class="arc-btn-top"></span>
+          <span class="arc-btn-label">JOURNEY</span>
+        </a>
+        <a href="#badges" class="arc-btn arc-btn--green">
+          <span class="arc-btn-top"></span>
+          <span class="arc-btn-label">BADGES</span>
+        </a>
+      </div>
+    </div>
 
-  <p class="hero-press blink">▼ PRESS START ▼</p>
+    <!-- Base / coin slot -->
+    <div class="cab-base">
+      <a href="#about" class="cab-coin-panel" aria-label="Insert coin to start">
+        <div class="cab-coin-slot"></div>
+        <div class="cab-coin-label">INSERT COIN</div>
+      </a>
+    </div>
+  </div>
 </div>
 
 <!-- ==================== ABOUT ==================== -->
@@ -44,9 +90,10 @@ title: Jason Fong
         <div class="trainer-field"><span class="label">TEAM:</span>&nbsp; SHOPIFY</div>
       </div>
     </div>
-
   </div>
 </section>
+
+<div class="separator" aria-hidden="true"><span class="separator-mark">◆ ◆ ◆</span></div>
 
 <!-- ==================== LORE ==================== -->
 <section id="lore" class="lore-section">
@@ -58,6 +105,8 @@ title: Jason Fong
     <p>Coffee meetings in Toronto always welcome. <span class="blink">▼</span></p>
   </div>
 </section>
+
+<div class="separator" aria-hidden="true"><span class="separator-mark">◆ ◆ ◆</span></div>
 
 <!-- ==================== JOURNEY ==================== -->
 <section id="journey" class="journey-section">
@@ -91,6 +140,8 @@ title: Jason Fong
     {% endfor %}
   </div>
 </section>
+
+<div class="separator" aria-hidden="true"><span class="separator-mark">◆ ◆ ◆</span></div>
 
 <!-- ==================== BADGES ==================== -->
 <section id="badges" class="badges-section">
