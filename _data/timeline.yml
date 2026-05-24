@@ -40,11 +40,51 @@
 
 - company: Shopify
   city: "SHOPIFY HQ"
-  title: Data Science Lead
+  title: Data Science Manager - Marketing
   from: 2018
+  to: 2020
+  description: "Grew and led a team of 12 Data Scientists owning analytics, BI, experimentation, ML, and data pipelines. Designed geo-based brand experiments with causal inference, evolved attribution to multi-touch Markov chains, and built lead scoring to improve trial conversion."
+  rewards: ["GEO EXPERIMENTS", "MARKOV ATTRIBUTION", "LEAD SCORING", "TEAM LEADERSHIP"]
+  xp: 60
+  duration: "2 YRS"
+
+- company: Wealthsimple
+  city: "WEALTHSIMPLE BASE"
+  title: Senior Data Science Manager - Growth
+  from: 2021
+  to: 2022
+  description: "Rebuilt data foundations with medallion architecture and Kimball dimensional modelling to restore trust across the org. Built marketing attribution for Apple's SKAN privacy changes and an ML model predicting 1-year revenue to drive efficient budget allocation. Deployed Hightouch reverse ETL to activate client data in Braze."
+  rewards: ["DATA ARCHITECTURE", "ATTRIBUTION", "REVENUE PREDICTION", "REVERSE ETL"]
+  xp: 60
+  duration: "1 YR"
+
+- company: Wealthsimple
+  city: "WEALTHSIMPLE EAST"
+  title: Director of Data Science - Decision Science
+  from: 2022
+  to: 2023
+  description: "Built Sales and Finance Data Science teams from scratch. Defined the sales funnel, built a lead scoring ML model to prioritize outbound leads, and developed a model estimating clients' outside liquid assets to target high-value prospects. Applied client embeddings and propensity modelling to sharpen lifecycle campaign targeting."
+  rewards: ["LEAD SCORING", "PROPENSITY MODELS", "CLIENT EMBEDDINGS", "SALES ANALYTICS"]
+  xp: 75
+  duration: "1 YR"
+
+- company: Wealthsimple
+  city: "WEALTHSIMPLE HQ"
+  title: Director of Data Science - Product
+  from: 2023
+  to: 2025
+  description: "Partnered with GMs across all Product verticals to embed analytics and experimentation into product strategy. Drove monetization through securities lending algorithm optimization ($5M+ incremental revenue), crypto & FX pricing, and Direct Deposit growth. Built ML-powered Spend Insights and Smart Bill Pay; scaled experiments from 10 to 100+ annually via StatSig."
+  rewards: ["ML PRODUCTS", "SECURITIES LENDING", "EXPERIMENTATION", "MONETIZATION"]
+  xp: 90
+  duration: "2 YRS"
+
+- company: Wealthsimple
+  city: "WEALTHSIMPLE HQ"
+  title: Director of Data Science - Product & Brokerage
+  from: 2026
   to: Present
-  description: "Leading marketing data science & engineering team: MMM, geo experiments, causal inference."
-  rewards: ["MMM", "CAUSAL INFERENCE", "GEO EXPERIMENTS", "TEAM LEADERSHIP"]
+  description: "Expanded scope to lead Data Science across Prediction Markets, Business Banking, and Family & Youth. Built Brokerage DS team, uncovering a $20M+ opportunity through order flow simulation and routing optimization. Led enterprise Redshift to Snowflake migration. Driving company-wide AI strategy with a Claude & Slack analytics agent enabling self-serve insights."
+  rewards: ["AI STRATEGY", "BROKERAGE OPS", "SNOWFLAKE", "CLAUDE API"]
   xp: 100
-  duration: "7 YRS"
+  duration: "ACTIVE"
   current: true
