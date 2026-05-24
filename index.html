@@ -79,7 +79,7 @@ title: Jason Fong
         <div class="trainer-field"><span class="label">CLASS:</span>&nbsp; DATA MASTER</div>
         <div class="trainer-field"><span class="label">ID NO.:</span>&nbsp; 001337</div>
         <div class="trainer-field"><span class="label">CITY:</span>&nbsp; TORONTO</div>
-        <div class="trainer-field"><span class="label">TEAM:</span>&nbsp; SHOPIFY</div>
+        <div class="trainer-field"><span class="label">TEAM:</span>&nbsp; WEALTHSIMPLE</div>
       </div>
     </div>
   </div>
@@ -93,7 +93,7 @@ title: Jason Fong
 
   <div class="dialog-box lore-box">
     <p>Data scientist focused on helping marketing teams make smarter, faster decisions with data.</p>
-    <p>Currently leading the Marketing Data Science &amp; Engineering team at Shopify. Specialties: causal inference, MMM, geo-experiments, and A/B testing at scale.</p>
+    <p>Currently leading Data Science across Product and Brokerage at Wealthsimple. Specialties: causal inference, MMM, geo-experiments, and A/B testing at scale.</p>
     <p>Coffee meetings in Toronto always welcome. <span class="blink">▼</span></p>
   </div>
 </section>
@@ -118,7 +118,15 @@ title: Jason Fong
       </button>
       <div class="quest-body" hidden>
         <div class="quest-role">{{ job.title }}</div>
+        {% if job.bullets %}
+        <ul class="quest-bullets">
+          {% for bullet in job.bullets %}
+          <li>{{ bullet }}</li>
+          {% endfor %}
+        </ul>
+        {% elsif job.description %}
         <div class="quest-desc">{{ job.description }}</div>
+        {% endif %}
         {% if job.rewards %}
         <div class="quest-rewards">
           <span class="quest-rewards-label">REWARDS:</span>

@@ -3,7 +3,9 @@
   title: Consulting Analyst
   from: 2012
   to: 2013
-  description: "Started the career journey. Built analytical thinking across client engagements."
+  bullets:
+    - Started the career journey as a Consulting Analyst at Accenture.
+    - Built analytical thinking and problem-solving skills across diverse client engagements.
   rewards: ["ANALYTICS", "STRUCTURED THINKING", "CLIENT WORK"]
   xp: 20
   duration: "1 YR"
@@ -13,7 +15,9 @@
   title: Product Specialist, Pricing
   from: 2013
   to: 2014
-  description: "Shaped pricing strategy in Mobility. First taste of data-driven decisions at scale."
+  bullets:
+    - Shaped pricing strategy in Mobility, developing commercial and data-driven decision-making skills.
+    - First exposure to data-driven decisions at scale in a major Canadian telco.
   rewards: ["PRICING STRATEGY", "DATA ANALYSIS", "TELCO DOMAIN"]
   xp: 20
   duration: "1 YR"
@@ -23,7 +27,9 @@
   title: Marketing Manager
   from: 2014
   to: 2016
-  description: "Led the Big Data Program. Brought data science thinking into marketing channels."
+  bullets:
+    - Led the Big Data Program, bringing data science thinking into marketing channels.
+    - Bridged the gap between marketing strategy and analytics across the organization.
   rewards: ["BIG DATA", "MARKETING SCIENCE", "CHANNEL STRATEGY"]
   xp: 35
   duration: "2 YRS"
@@ -33,7 +39,9 @@
   title: Data Scientist
   from: 2016
   to: 2018
-  description: "Solved marketing problems at scale: attribution, experimentation, and growth."
+  bullets:
+    - Solved marketing problems at scale across attribution, experimentation, and growth.
+    - Built foundational measurement and analytics capabilities for the marketing team.
   rewards: ["ATTRIBUTION", "A/B TESTING", "GROWTH"]
   xp: 35
   duration: "2 YRS"
@@ -43,7 +51,11 @@
   title: Data Science Manager - Marketing
   from: 2018
   to: 2020
-  description: "Grew and led a team of 12 Data Scientists owning analytics, BI, experimentation, ML, and data pipelines. Designed geo-based brand experiments with causal inference, evolved attribution to multi-touch Markov chains, and built lead scoring to improve trial conversion."
+  bullets:
+    - Grew and led a team of 12 Data Scientists owning analytics, BI, experimentation, ML, and data pipelines.
+    - "Designed and measured Shopify's first brand campaign using geo-based experiments with causal inference to quantify incremental lift in merchant acquisition."
+    - Evolved last-touch to an algorithmic multi-touch attribution model using higher-order Markov chains, correcting misallocated spend across channels.
+    - Optimized signup and free trial conversion through experimentation and built a lead scoring model to assess lead quality.
   rewards: ["GEO EXPERIMENTS", "MARKOV ATTRIBUTION", "LEAD SCORING", "TEAM LEADERSHIP"]
   xp: 60
   duration: "2 YRS"
@@ -53,7 +65,11 @@
   title: Senior Data Science Manager - Growth
   from: 2021
   to: 2022
-  description: "Rebuilt data foundations with medallion architecture and Kimball dimensional modelling to restore trust across the org. Built marketing attribution for Apple's SKAN privacy changes and an ML model predicting 1-year revenue to drive efficient budget allocation. Deployed Hightouch reverse ETL to activate client data in Braze."
+  bullets:
+    - Rebuilt data foundations from scratch, defining medallion architecture and Kimball dimensional modelling to restore reliability and trust across the organization.
+    - "Built marketing attribution model to navigate Apple's privacy changes (SKAN), improving ROAS during Wealthsimple's hypergrowth."
+    - Built ML model to predict 1-year revenue, enabling CAC:LTV to drive efficient marketing budget allocation.
+    - Deployed Hightouch reverse ETL to activate clean client data in Braze, enabling precise targeting across lifecycle marketing campaigns.
   rewards: ["DATA ARCHITECTURE", "ATTRIBUTION", "REVENUE PREDICTION", "REVERSE ETL"]
   xp: 60
   duration: "1 YR"
@@ -63,7 +79,11 @@
   title: Director of Data Science - Decision Science
   from: 2022
   to: 2023
-  description: "Built Sales and Finance Data Science teams from scratch. Defined the sales funnel, built a lead scoring ML model to prioritize outbound leads, and developed a model estimating clients' outside liquid assets to target high-value prospects. Applied client embeddings and propensity modelling to sharpen lifecycle campaign targeting."
+  bullets:
+    - Expanded scope to build Sales and Finance Data Science teams from the ground up.
+    - "Established data foundations for Wealthsimple's commercial sales team by defining the sales funnel, modelling sales metrics, and building a lead scoring ML model to prioritize outbound leads, improving conversion."
+    - "Developed a model to estimate clients' outside liquid assets, enabling Marketing and Sales to target high-value prospects for AUM consolidation and Premium and Generation client growth."
+    - Applied client embeddings and propensity modelling to sharpen audience targeting across lifecycle campaigns.
   rewards: ["LEAD SCORING", "PROPENSITY MODELS", "CLIENT EMBEDDINGS", "SALES ANALYTICS"]
   xp: 75
   duration: "1 YR"
@@ -73,7 +93,11 @@
   title: Director of Data Science - Product
   from: 2023
   to: 2025
-  description: "Partnered with GMs across all Product verticals to embed analytics and experimentation into product strategy. Drove monetization through securities lending algorithm optimization ($5M+ incremental revenue), crypto & FX pricing, and Direct Deposit growth. Built ML-powered Spend Insights and Smart Bill Pay; scaled experiments from 10 to 100+ annually via StatSig."
+  bullets:
+    - Partnered with GMs across all Product verticals (Self Directed Investing, Managed Portfolio, Banking, Crypto, and Ledger) to embed analytics and experimentation into product strategy.
+    - "Drove monetization across the portfolio including Active Trader vs. Buy & Hold positioning, Direct Deposit growth, optimizing securities lending algorithms ($5M+ incremental revenue) and Crypto & FX pricing."
+    - "Built ML & AI powered Data Products in the Wealthsimple app, including Spend Insights (transaction categorization) and Smart Bill Pay (payee discovery)."
+    - Onboarded StatSig experimentation platform, scaling experiments from 10 to 100+ annually and enabling self-serve A/B testing.
   rewards: ["ML PRODUCTS", "SECURITIES LENDING", "EXPERIMENTATION", "MONETIZATION"]
   xp: 90
   duration: "2 YRS"
@@ -83,7 +107,11 @@
   title: Director of Data Science - Product & Brokerage
   from: 2026
   to: Present
-  description: "Expanded scope to lead Data Science across Prediction Markets, Business Banking, and Family & Youth. Built Brokerage DS team, uncovering a $20M+ opportunity through order flow simulation and routing optimization. Led enterprise Redshift to Snowflake migration. Driving company-wide AI strategy with a Claude & Slack analytics agent enabling self-serve insights."
+  bullets:
+    - Expanded scope to lead Data Science across Prediction Markets, Business Banking, and Family & Youth Money Management.
+    - "Built the Brokerage Data Science team to monetize back-office operations, with order flow monetization simulation and routing optimization uncovering a $20M+ opportunity that drove company-wide investment."
+    - "Led the data science partnership for Wealthsimple's enterprise migration from Redshift to Snowflake, improving scalability and reliability across analytics and client-facing decision systems."
+    - Leading company-wide AI strategy to democratize business analytics through an AI agent deployed across Claude and Slack, enabling self-serve insights grounded in internal data context.
   rewards: ["AI STRATEGY", "BROKERAGE OPS", "SNOWFLAKE", "CLAUDE API"]
   xp: 100
   duration: "ACTIVE"
