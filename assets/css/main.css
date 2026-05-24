@@ -130,13 +130,15 @@ body::before {
 .section-label {
   display: inline-block;
   font-size: 12px;
-  color: var(--terracotta);
-  border: 3px solid var(--terracotta);
+  color: var(--cab-phosphor);
+  border: 3px solid var(--cab-phosphor);
   padding: 6px 14px;
   margin-bottom: 28px;
   letter-spacing: 2px;
   transform: rotate(-1.5deg);
-  opacity: 0.9;
+  opacity: 0.95;
+  text-shadow: 0 0 6px rgba(159, 232, 112, 0.45);
+  box-shadow: 0 0 14px rgba(159, 232, 112, 0.18);
 }
 
 /* === ANIMATIONS === */
@@ -164,12 +166,12 @@ body::before {
 
 /* === ARCADE CABINET PALETTE === */
 :root {
-  --cab-body:      #C4622D;   /* terracotta chassis */
-  --cab-body-dk:   #8B3F18;   /* shadow side */
-  --cab-body-lt:   #E08249;   /* highlight */
-  --cab-trim:      #2C1A0F;   /* black ink trim */
-  --cab-screen:    #0D2818;   /* CRT black-green */
-  --cab-phosphor:  #9FE870;   /* phosphor green */
+  --cab-body:      #C4622D;
+  --cab-body-dk:   #8B3F18;
+  --cab-body-lt:   #E08249;
+  --cab-trim:      #2C1A0F;
+  --cab-screen:    #0D2818;
+  --cab-phosphor:  #9FE870;
   --cab-phosphor-dim: #5BAF4A;
   --cab-yellow:    #E8B83A;
   --cab-red:       #D43A2A;
@@ -230,38 +232,28 @@ body::before {
   filter: drop-shadow(0 30px 0 rgba(0,0,0,0.35));
 }
 
-/* ----- Marquee ----- */
-.cab-marquee {
-  background: var(--cab-body);
+/* curved side flanks */
+.arcade-cabinet::before,
+.arcade-cabinet::after {
+  content: '';
+  position: absolute;
+  top: 60px;
+  bottom: 0;
+  width: 38px;
+  background: var(--cab-body-dk);
   border: 5px solid var(--cab-trim);
-  border-bottom: none;
-  padding: 14px 20px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  border-radius: 16px 16px 0 0;
-  box-shadow:
-    inset 0 4px 0 var(--cab-body-lt),
-    inset 0 -4px 0 var(--cab-body-dk);
-  position: relative;
+  box-shadow: inset 0 0 0 2px var(--cab-body);
+  z-index: -1;
 }
-
-.cab-marquee-text {
-  font-family: var(--font);
-  font-size: clamp(14px, 2.4vw, 20px);
-  color: #FFF1D6;
-  letter-spacing: 4px;
-  text-shadow:
-    2px 2px 0 var(--cab-trim),
-    0 0 12px rgba(255, 220, 150, 0.4);
+.arcade-cabinet::before {
+  left: -32px;
+  border-radius: 60% 12px 18px 60% / 28% 12px 18px 28%;
+  border-right: none;
 }
-
-.cab-marquee-bolt {
-  font-size: clamp(12px, 1.8vw, 16px);
-  color: var(--cab-yellow);
-  text-shadow: 2px 2px 0 var(--cab-trim);
-  animation: shimmer 2.4s ease-in-out infinite;
+.arcade-cabinet::after {
+  right: -32px;
+  border-radius: 12px 60% 60% 18px / 12px 28% 28% 18px;
+  border-left: none;
 }
 
 /* ----- Bezel + Screen ----- */
@@ -270,9 +262,11 @@ body::before {
   border: 5px solid var(--cab-trim);
   border-bottom: none;
   padding: 22px 22px 26px;
+  border-radius: 16px 16px 0 0;
   box-shadow:
     inset 5px 0 0 var(--cab-body-lt),
-    inset -5px 0 0 var(--cab-body-dk);
+    inset -5px 0 0 var(--cab-body-dk),
+    inset 0 5px 0 var(--cab-body-lt);
   position: relative;
 }
 
@@ -343,7 +337,6 @@ body::before {
   width: 100%;
 }
 
-/* phosphor-green text inside the screen */
 .cab-screen .hero-eyebrow {
   font-size: 7px;
   color: var(--cab-phosphor-dim);
@@ -387,7 +380,7 @@ body::before {
   text-shadow: 0 0 6px rgba(232, 184, 58, 0.6);
 }
 
-/* screen rounded inner-corner shims (CRT-style) */
+/* screen corner shims */
 .cab-screen-corner {
   position: absolute;
   width: 14px;
@@ -400,18 +393,16 @@ body::before {
 .cab-screen-corner--bl { bottom: -6px; left: -6px; clip-path: polygon(0 0, 0 100%, 100% 100%); }
 .cab-screen-corner--br { bottom: -6px; right: -6px; clip-path: polygon(100% 0, 100% 100%, 0 100%); }
 
-/* ----- Control deck (slanted) ----- */
+/* ----- Control deck (flat, column layout) ----- */
 .cab-deck {
   background: var(--cab-body);
   border: 5px solid var(--cab-trim);
-  border-bottom: none;
-  padding: 30px 36px 34px;
+  padding: 22px 28px 34px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  clip-path: polygon(0 14%, 100% 0, 100% 100%, 0 100%);
-  margin-top: -2px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 22px;
+  border-radius: 0 0 10px 10px;
   box-shadow:
     inset 5px 0 0 var(--cab-body-lt),
     inset -5px 0 0 var(--cab-body-dk),
@@ -419,12 +410,21 @@ body::before {
   position: relative;
 }
 
+.cab-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-left: 40px;
+}
+
 /* joystick */
 .joystick {
   position: relative;
-  width: 76px;
-  height: 76px;
+  width: 100px;
+  height: 100px;
   flex-shrink: 0;
+  margin-top: -16px;
 }
 
 .joystick-base {
@@ -433,17 +433,17 @@ body::before {
   background: var(--cab-trim);
   border-radius: 50%;
   box-shadow:
-    inset 0 -4px 0 #000,
-    inset 0 4px 0 #4a3020,
-    0 4px 0 rgba(0,0,0,0.4);
+    inset 0 -5px 0 #000,
+    inset 0 5px 0 #4a3020,
+    0 5px 0 rgba(0,0,0,0.4);
 }
 
 .joystick-stick {
   position: absolute;
   left: 50%;
   bottom: 32%;
-  width: 10px;
-  height: 36px;
+  width: 13px;
+  height: 48px;
   background: linear-gradient(90deg, #1a1a1a 0%, #555 50%, #1a1a1a 100%);
   transform: translateX(-50%);
   border-radius: 2px;
@@ -452,16 +452,16 @@ body::before {
 .joystick-ball {
   position: absolute;
   left: 50%;
-  top: -8px;
-  width: 30px;
-  height: 30px;
+  top: -10px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background:
     radial-gradient(circle at 35% 30%, #ff6b3d 0%, var(--cab-red) 45%, #8a1a10 100%);
   transform: translateX(-50%);
   box-shadow:
-    inset 0 -3px 0 #6b0f08,
-    0 4px 0 rgba(0,0,0,0.45);
+    inset 0 -4px 0 #6b0f08,
+    0 5px 0 rgba(0,0,0,0.45);
 }
 
 /* buttons */
@@ -470,6 +470,7 @@ body::before {
   grid-template-columns: repeat(2, auto);
   gap: 36px 18px;
   flex-shrink: 0;
+  margin-top: -22px;
 }
 
 .arc-btn {
@@ -528,30 +529,18 @@ body::before {
   box-shadow: inset 0 -1px 0 #000;
 }
 
-/* ----- Base / coin slot ----- */
-.cab-base {
-  background: var(--cab-body);
-  border: 5px solid var(--cab-trim);
-  padding: 24px 22px 26px;
-  border-radius: 0 0 10px 10px;
-  display: flex;
-  justify-content: center;
-  box-shadow:
-    inset 5px 0 0 var(--cab-body-lt),
-    inset -5px 0 0 var(--cab-body-dk),
-    inset 0 -6px 0 var(--cab-body-dk);
-}
-
+/* ----- Coin panel (inside deck) ----- */
 .cab-coin-panel {
+  align-self: center;
   background: var(--cab-trim);
   border: 4px solid #000;
-  padding: 14px 28px;
+  padding: 12px 28px;
   border-radius: 6px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  width: 200px;
+  gap: 8px;
+  width: 220px;
   box-shadow: inset 0 0 0 2px #4a3020;
   text-decoration: none;
   cursor: pointer;
@@ -595,13 +584,23 @@ body::before {
 
 /* responsive */
 @media (max-width: 520px) {
+  .arcade-cabinet { width: min(420px, 88vw); }
   .cab-deck {
-    flex-direction: column;
-    gap: 30px;
-    padding: 34px 24px 30px;
+    padding: 18px 16px 24px;
+    gap: 18px;
   }
-  .cab-buttons { gap: 12px; }
-  .arc-btn { width: 56px; height: 56px; }
+  .cab-controls { gap: 16px; padding-left: 16px; }
+  .joystick { width: 70px; height: 70px; margin-top: -8px; }
+  .joystick-stick { height: 32px; width: 10px; }
+  .joystick-ball { width: 28px; height: 28px; top: -7px; }
+  .cab-buttons { gap: 28px 12px; margin-top: -12px; }
+  .arc-btn { width: 48px; height: 48px; }
+  .arc-btn-label { font-size: 6px; bottom: -18px; letter-spacing: 1px; }
+  .cab-coin-panel { width: 180px; padding: 10px 20px; }
+  .arcade-cabinet::before,
+  .arcade-cabinet::after { width: 22px; }
+  .arcade-cabinet::before { left: -18px; }
+  .arcade-cabinet::after  { right: -18px; }
 }
 
 /* ========================= */
@@ -619,11 +618,12 @@ body::before {
 }
 
 .trainer-card-header {
-  background: var(--terracotta);
-  color: var(--cream);
+  background: var(--cab-phosphor);
+  color: var(--cab-screen);
   font-size: 11px;
   padding: 12px 18px;
   letter-spacing: 3px;
+  text-shadow: 0 0 4px rgba(13, 40, 24, 0.4);
 }
 
 .trainer-card-main {
@@ -737,8 +737,8 @@ body::before {
 }
 
 .quest-entry.open > .quest-header {
-  background: var(--terracotta);
-  color: var(--cream);
+  background: var(--cab-phosphor);
+  color: var(--cab-screen);
 }
 
 .quest-id {
@@ -749,7 +749,7 @@ body::before {
 }
 
 .quest-entry.open .quest-id {
-  color: rgba(245, 240, 232, 0.55);
+  color: rgba(13, 40, 24, 0.65);
 }
 
 .quest-name {
