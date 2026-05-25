@@ -660,6 +660,7 @@ body::before {
 .trainer-field {
   font-size: 10px;
   line-height: 2;
+  color: var(--ink);
 }
 
 .trainer-field .label {
