@@ -76,7 +76,7 @@ title: Jason Fong
       </div>
       <div class="trainer-info">
         <div class="trainer-field"><span class="label">NAME:</span>&nbsp; JASON FONG</div>
-        <div class="trainer-field"><span class="label">CLASS:</span>&nbsp; MAGICIAN</div>
+        <div class="trainer-field"><span class="label">CLASS:</span>&nbsp; DATA MAGICIAN</div>
         <div class="trainer-field"><span class="label">ID NO.:</span>&nbsp; 001337</div>
         <div class="trainer-field"><span class="label">CITY:</span>&nbsp; TORONTO</div>
         <div class="trainer-field"><span class="label">TEAM:</span>&nbsp; WEALTHSIMPLE</div>
@@ -111,6 +111,7 @@ title: Jason Fong
     <div class="quest-entry{% if job.current %} active{% endif %}">
       <button class="quest-header">
         <span class="quest-id">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+        {% if job.logo %}<img class="quest-logo" src="{{ job.logo | relative_url }}" alt="{{ job.company }} logo">{% endif %}
         <span class="quest-name">{{ job.company }}</span>
         <span class="quest-years">{{ job.from }}–{{ job.to }}</span>
         <span class="quest-badge">{% if job.current %}★ ACTIVE{% else %}DONE{% endif %}</span>
