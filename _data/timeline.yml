@@ -1,6 +1,5 @@
 - company: Accenture
   city: "ACCENTURE CITY"
-  logo: /assets/logos/accenture.svg
   title: Consulting Analyst
   from: 2012
   to: 2013
@@ -12,7 +11,6 @@
 
 - company: TELUS
   city: "TELUS TOWN"
-  logo: /assets/logos/telus.svg
   title: Product Specialist - Pricing Strategy
   from: 2013
   to: 2014
@@ -24,7 +22,6 @@
 
 - company: TELUS
   city: "TELUS HEIGHTS"
-  logo: /assets/logos/telus.svg
   title: Marketing Manager - Big Data
   from: 2014
   to: 2016
@@ -36,7 +33,6 @@
 
 - company: Shopify
   city: "SHOPIFY DEPOT"
-  logo: /assets/logos/shopify.svg
   title: Data Scientist - Marketing
   from: 2016
   to: 2018
@@ -48,7 +44,6 @@
 
 - company: Shopify
   city: "SHOPIFY HQ"
-  logo: /assets/logos/shopify.svg
   title: Data Science Manager - Marketing
   from: 2018
   to: 2020
@@ -63,7 +58,6 @@
   duration: "2 YRS"
 
 - company: Wealthsimple
-  logo: /assets/logos/wealthsimple.svg
   city: "WEALTHSIMPLE BASE"
   title: Senior Data Science Manager - Growth
   from: 2021
@@ -78,7 +72,6 @@
   duration: "1 YR"
 
 - company: Wealthsimple
-  logo: /assets/logos/wealthsimple.svg
   city: "WEALTHSIMPLE EAST"
   title: Director of Data Science - Decision Science
   from: 2022
@@ -93,7 +86,6 @@
   duration: "1 YR"
 
 - company: Wealthsimple
-  logo: /assets/logos/wealthsimple.svg
   city: "WEALTHSIMPLE HQ"
   title: Director of Data Science - Product
   from: 2023
@@ -108,7 +100,6 @@
   duration: "2 YRS"
 
 - company: Wealthsimple
-  logo: /assets/logos/wealthsimple.svg
   city: "WEALTHSIMPLE HQ"
   title: Director of Data Science - Product & Brokerage
   from: 2026

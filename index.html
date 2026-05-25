@@ -111,7 +111,6 @@ title: Jason Fong
     <div class="quest-entry{% if job.current %} active{% endif %}">
       <button class="quest-header">
         <span class="quest-id">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
-        {% if job.logo %}<img class="quest-logo" src="{{ job.logo | relative_url }}" alt="{{ job.company }} logo">{% endif %}
         <span class="quest-name">{{ job.company }}</span>
         <span class="quest-years">{{ job.from }}–{{ job.to }}</span>
         <span class="quest-badge">{% if job.current %}★ ACTIVE{% else %}DONE{% endif %}</span>
