@@ -1,11 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" shape-rendering="crispEdges">
   <rect width="32" height="32" fill="#0D2818"/>
-  <!-- Accenture > chevron (their actual logo mark) -->
   <rect x="6"  y="5"  width="6" height="6"  fill="#9FE870"/>
   <rect x="12" y="11" width="6" height="6"  fill="#9FE870"/>
   <rect x="18" y="17" width="6" height="6"  fill="#9FE870"/>
   <rect x="12" y="17" width="6" height="2"  fill="#0D2818"/>
-  <!-- Lower half mirror -->
   <rect x="6"  y="21" width="6" height="6"  fill="#9FE870"/>
   <rect x="12" y="15" width="6" height="6"  fill="#9FE870"/>
 </svg>

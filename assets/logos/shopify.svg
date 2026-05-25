@@ -1,17 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" shape-rendering="crispEdges">
   <rect width="32" height="32" fill="#0D2818"/>
-  <!-- Shopping bag silhouette -->
-  <!-- Handle left arm -->
   <rect x="9"  y="3"  width="4" height="2"  fill="#9FE870"/>
-  <!-- Handle arch top -->
   <rect x="9"  y="5"  width="2" height="5"  fill="#9FE870"/>
   <rect x="21" y="5"  width="2" height="5"  fill="#9FE870"/>
   <rect x="19" y="3"  width="4" height="2"  fill="#9FE870"/>
-  <!-- Bag body -->
   <rect x="4"  y="10" width="24" height="18" fill="#9FE870"/>
-  <!-- Bag interior cut-out -->
   <rect x="6"  y="12" width="20" height="14" fill="#0D2818"/>
-  <!-- Pixel S on bag face -->
   <rect x="10" y="13" width="12" height="2"  fill="#9FE870"/>
   <rect x="10" y="15" width="2"  height="4"  fill="#9FE870"/>
   <rect x="10" y="19" width="12" height="2"  fill="#9FE870"/>
