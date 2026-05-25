@@ -4,45 +4,41 @@
   from: 2012
   to: 2013
   bullets:
-    - Started the career journey as a Consulting Analyst at Accenture.
-    - Built analytical thinking and problem-solving skills across diverse client engagements.
+    - "Led requirements gathering with 30+ SMEs to design a multi-product recommendation engine for a large Canadian bank, while supporting M&A system integration strategy."
   rewards: ["ANALYTICS", "STRUCTURED THINKING", "CLIENT WORK"]
   xp: 20
   duration: "1 YR"
 
 - company: TELUS
   city: "TELUS TOWN"
-  title: Product Specialist, Pricing
+  title: Product Specialist - Pricing Strategy
   from: 2013
   to: 2014
   bullets:
-    - Shaped pricing strategy in Mobility, developing commercial and data-driven decision-making skills.
-    - First exposure to data-driven decisions at scale in a major Canadian telco.
+    - Drove national pricing strategy and competitive response go-to-market for consumer mobility, leading cross-functional teams across rate plan development, channel communication, and marketing.
   rewards: ["PRICING STRATEGY", "DATA ANALYSIS", "TELCO DOMAIN"]
   xp: 20
   duration: "1 YR"
 
 - company: TELUS
   city: "TELUS HEIGHTS"
-  title: Marketing Manager
+  title: Marketing Manager - Big Data
   from: 2014
   to: 2016
   bullets:
-    - Led the Big Data Program, bringing data science thinking into marketing channels.
-    - Bridged the gap between marketing strategy and analytics across the organization.
-  rewards: ["BIG DATA", "MARKETING SCIENCE", "CHANNEL STRATEGY"]
+    - "Led a team of 10 to deliver an intelligent agent dashboard and Next Best Action portfolio, integrating predictive analytics and machine intelligence across TELUS inbound channels achieving >140% lift in sales and improving ARPU, LTV, and churn."
+  rewards: ["BIG DATA", "MARKETING SCIENCE", "NEXT BEST ACTION"]
   xp: 35
   duration: "2 YRS"
 
 - company: Shopify
   city: "SHOPIFY DEPOT"
-  title: Data Scientist
+  title: Data Scientist - Marketing
   from: 2016
   to: 2018
   bullets:
-    - Solved marketing problems at scale across attribution, experimentation, and growth.
-    - Built foundational measurement and analytics capabilities for the marketing team.
-  rewards: ["ATTRIBUTION", "A/B TESTING", "GROWTH"]
+    - Owned marketing analytics, campaign optimization, segmentation, and experimentation for conversion rate optimization, underpinned by PySpark data pipelines.
+  rewards: ["ATTRIBUTION", "A/B TESTING", "PYSPARK"]
   xp: 35
   duration: "2 YRS"
 
@@ -52,6 +48,7 @@
   from: 2018
   to: 2020
   bullets:
+    - Double promoted to Data Science Manager, skipping Senior Data Scientist level.
     - Grew and led a team of 12 Data Scientists owning analytics, BI, experimentation, ML, and data pipelines.
     - "Designed and measured Shopify's first brand campaign using geo-based experiments with causal inference to quantify incremental lift in merchant acquisition."
     - Evolved last-touch to an algorithmic multi-touch attribution model using higher-order Markov chains, correcting misallocated spend across channels.
@@ -66,9 +63,9 @@
   from: 2021
   to: 2022
   bullets:
-    - Rebuilt data foundations from scratch, defining medallion architecture and Kimball dimensional modelling to restore reliability and trust across the organization.
+    - "Rebuilt data foundations from scratch, defining medallion architecture, Kimball dimensional modelling, and analytics eventing strategy to restore reliability and trust across the organization."
     - "Built marketing attribution model to navigate Apple's privacy changes (SKAN), improving ROAS during Wealthsimple's hypergrowth."
-    - Built ML model to predict 1-year revenue, enabling CAC:LTV to drive efficient marketing budget allocation.
+    - "Built ML model to predict 1-year revenue, enabling CAC:LTV to drive efficient marketing budget allocation."
     - Deployed Hightouch reverse ETL to activate clean client data in Braze, enabling precise targeting across lifecycle marketing campaigns.
   rewards: ["DATA ARCHITECTURE", "ATTRIBUTION", "REVENUE PREDICTION", "REVERSE ETL"]
   xp: 60
@@ -94,10 +91,10 @@
   from: 2023
   to: 2025
   bullets:
-    - Partnered with GMs across all Product verticals (Self Directed Investing, Managed Portfolio, Banking, Crypto, and Ledger) to embed analytics and experimentation into product strategy.
-    - "Drove monetization across the portfolio including Active Trader vs. Buy & Hold positioning, Direct Deposit growth, optimizing securities lending algorithms ($5M+ incremental revenue) and Crypto & FX pricing."
-    - "Built ML & AI powered Data Products in the Wealthsimple app, including Spend Insights (transaction categorization) and Smart Bill Pay (payee discovery)."
-    - Onboarded StatSig experimentation platform, scaling experiments from 10 to 100+ annually and enabling self-serve A/B testing.
+    - Partnered with GMs across Investing, Banking, Crypto, and Ledger businesses to embed analytics, experimentation, and decision science into product strategy and roadmap prioritization.
+    - "Drove monetization initiatives including Active Trader positioning, Direct Deposit growth, securities lending optimization ($5M+ incremental revenue), and Crypto & FX pricing strategy."
+    - Led development of ML-powered data products embedded within the Wealthsimple app, including transaction intelligence and bill-pay discovery capabilities that enhanced and simplified client financial workflows.
+    - "Led rollout of StatSig experimentation infrastructure, scaling annual experiments from 10 to 100+ and enabling self-serve product experimentation across teams."
   rewards: ["ML PRODUCTS", "SECURITIES LENDING", "EXPERIMENTATION", "MONETIZATION"]
   xp: 90
   duration: "2 YRS"
@@ -108,10 +105,10 @@
   from: 2026
   to: Present
   bullets:
-    - Expanded scope to lead Data Science across Prediction Markets, Business Banking, and Family & Youth Money Management.
-    - "Built the Brokerage Data Science team to monetize back-office operations, with order flow monetization simulation and routing optimization uncovering a $20M+ opportunity that drove company-wide investment."
-    - "Led the data science partnership for Wealthsimple's enterprise migration from Redshift to Snowflake, improving scalability and reliability across analytics and client-facing decision systems."
-    - Leading company-wide AI strategy to democratize business analytics through an AI agent deployed across Claude and Slack, enabling self-serve insights grounded in internal data context.
+    - Lead Data Science across Prediction Markets, Business Banking, and Family & Youth Money Management, expanding organizational scope across multiple emerging product verticals.
+    - "Built and scaled the Brokerage Data Science function, developing order flow monetization simulations and routing optimization strategies that identified a $20M+ revenue opportunity and drove firm-wide investment."
+    - Lead Data Science strategy for Wealthsimple's enterprise migration from Redshift to Snowflake, modernizing analytics infrastructure and improving scalability, reliability, and governance across decision systems.
+    - "Lead company-wide AI strategy to democratize business analytics through AI agents embedded in Claude and Slack, enabling self-serve insights grounded in Wealthsimple's internal data ecosystem."
   rewards: ["AI STRATEGY", "BROKERAGE OPS", "SNOWFLAKE", "CLAUDE API"]
   xp: 100
   duration: "ACTIVE"
