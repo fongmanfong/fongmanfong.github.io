@@ -666,6 +666,8 @@ body::before {
 
 .trainer-field .label {
   color: var(--muted);
+  display: inline-block;
+  min-width: 85px;
 }
 
 /* ======================== */
@@ -748,20 +750,6 @@ body::before {
   color: var(--muted);
   flex-shrink: 0;
   width: 28px;
-}
-
-.quest-logo {
-  width: 26px;
-  height: 26px;
-  object-fit: contain;
-  flex-shrink: 0;
-  image-rendering: pixelated;
-  border: 2px solid var(--cab-phosphor-dim);
-  box-shadow: 0 0 4px rgba(159, 232, 112, 0.2);
-}
-
-.quest-entry.open .quest-logo {
-  border-color: var(--cab-screen);
 }
 
 .quest-entry.open .quest-id {
