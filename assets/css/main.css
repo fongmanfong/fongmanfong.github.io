@@ -666,6 +666,8 @@ body::before {
 
 .trainer-field .label {
   color: var(--muted);
+  display: inline-block;
+  min-width: 85px;
 }
 
 /* ======================== */
